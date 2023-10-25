@@ -175,6 +175,7 @@
     <ClCompile Include="ConvexShape3D.cpp" />
     <ClCompile Include="CSGPolygon.cpp" />
     <ClCompile Include="CSGPolygonPath.cpp" />
+    <ClCompile Include="CubeEngine.cpp" />
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="CylinderModel.cpp" />
     <ClCompile Include="CylinderShape.cpp" />
@@ -191,6 +192,7 @@
     <ClCompile Include="FreeCamera.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="FunnelAlgorithm.cpp" />
+    <ClCompile Include="GameApp01.cpp" />
     <ClCompile Include="GenericRendererBuilder.cpp" />
     <ClCompile Include="GeometryContainer.cpp" />
     <ClCompile Include="GeometryModel.cpp" />
@@ -426,6 +428,7 @@
     <ClInclude Include="ConvexShape3D.h" />
     <ClInclude Include="CSGPolygon.h" />
     <ClInclude Include="CSGPolygonPath.h" />
+    <ClInclude Include="CubeEngine.h" />
     <ClInclude Include="CustomModelShaderVariable.h" />
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="CylinderModel.h" />
@@ -446,6 +449,7 @@
     <ClInclude Include="FreeCamera.h" />
     <ClInclude Include="Frustum.h" />
     <ClInclude Include="FunnelAlgorithm.h" />
+    <ClInclude Include="GameApp01.h" />
     <ClInclude Include="GenericRendererBuilder.h" />
     <ClInclude Include="GeometryContainer.h" />
     <ClInclude Include="GeometryModel.h" />

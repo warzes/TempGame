@@ -697,6 +697,12 @@
     <ClCompile Include="MapSerializer.cpp">
       <Filter>temp\common\io\map</Filter>
     </ClCompile>
+    <ClCompile Include="GameApp01.cpp">
+      <Filter>_GAME01</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeEngine.cpp">
+      <Filter>_GAME01</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseSceneShader.h" />
@@ -1516,6 +1522,12 @@
     <ClInclude Include="MapSerializer.h">
       <Filter>temp\common\io\map</Filter>
     </ClInclude>
+    <ClInclude Include="GameApp01.h">
+      <Filter>_GAME01</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeEngine.h">
+      <Filter>_GAME01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="temp">
@@ -1835,6 +1847,9 @@
     </Filter>
     <Filter Include="temp\aggregation">
       <UniqueIdentifier>{1d10d079-8326-4b0a-a8d2-88254a445525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GAME01">
+      <UniqueIdentifier>{d4f1f12f-5961-4dd7-bb1e-e3e20c2a8865}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
