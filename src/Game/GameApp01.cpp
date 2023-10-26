@@ -2,67 +2,169 @@
 #include "GameApp01.h"
 #include "BaseSceneShader.h"
 #include "Vertex.h"
+#include "MapEngine.h"
 //-----------------------------------------------------------------------------
 namespace
 {
 	ShaderProgramRef BaseSceneShader;
 	Uniform BaseSceneShaderUniformProjectionMatrix;
-	ShaderProgramRef MeshSceneShader;
-	Uniform MeshSceneShaderUniformWorldMatrix;
-	Uniform MeshSceneShaderUniformViewMatrix;
-	Uniform MeshSceneShaderUniformProjectionMatrix;
-
-	RenderTargetRef rt;
+	Map map;
 }
 //-----------------------------------------------------------------------------
 bool GameApp01::Create()
 {
-	BaseVertex vert[] =
-	{
-		BaseVertex({ 1000.f * -0.5f, 0.0f, 1000.0f * 0.5f}, {0.0f, 0.0f},       {1.0f, 1.0f, 1.0f, 1.0f}), // top left
-		BaseVertex({ 1000.f * 0.5f, 0.0f, 1000.0f * 0.5f}, {1000.0f, 0.0f},    {1.0f, 1.0f, 1.0f, 1.0f}), // top right
-		BaseVertex({ 1000.f * -0.5f, 0.0f, 1000.0f * -0.5f}, {0.0f, 1000.0f},    {1.0f, 1.0f, 1.0f, 1.0f}), // bottom right
-		BaseVertex({ 1000.f * 0.5f, 0.0f, 1000.0f * -0.5f}, {1000.0f, 1000.0f}, {1.0f, 1.0f, 1.0f, 1.0f}), // bottom left
-	};
 	//glEnable(GL_CULL_FACE); // для теста - треугольник выше против часой стрелки
 
-	unsigned int indices[] = {  // note that we start from 0!
-		0, 1, 2,   // first triangle
-		2, 1, 3    // second triangle
+	BaseVertex vert[] =
+	{
+		// вверх
+		BaseVertex({ -0.5f, 0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f, 0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+		// лево
+		BaseVertex({ -0.5f,  0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f,  0.5f, -0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f,  0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+		// право
+		BaseVertex({ 0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ 0.5f,  0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ 0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ 0.5f, -0.5f,  0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+		// низ
+		BaseVertex({  0.5f, -0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+		// перед
+		BaseVertex({ -0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f,  0.5f, -0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+		// зад
+		BaseVertex({  0.5f,  0.5f, 0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f,  0.5f, 0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({  0.5f, -0.5f, 0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+		BaseVertex({ -0.5f, -0.5f, 0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
+
+	};
+
+
+	unsigned int indices[] = {
+		0, 1, 2,
+		2, 1, 3,
+
+		4, 5, 6,
+		6, 5, 7,
+
+		8, 9, 10,
+		10, 9, 11,
+
+		12, 13, 14,
+		14, 13, 15,
+
+		16, 17, 18,
+		18, 17, 19,
+
+		20, 21, 22,
+		22, 21, 23
 	};
 
 	auto& renderSystem = GetRenderSystem();
 	auto& graphicsSystem = GetGraphicsSystem();
 
-	rt = graphicsSystem.CreateRenderTarget(1024, 768);
-
 	BaseSceneShader = CreateBaseSceneShader();
 	BaseSceneShaderUniformProjectionMatrix = renderSystem.GetUniform(BaseSceneShader, "pvMatrix");
 
-	MeshSceneShader = CreateMeshSceneShader();
-	MeshSceneShaderUniformWorldMatrix = renderSystem.GetUniform(MeshSceneShader, "uWorld");
-	MeshSceneShaderUniformViewMatrix = renderSystem.GetUniform(MeshSceneShader, "uView");
-	MeshSceneShaderUniformProjectionMatrix = renderSystem.GetUniform(MeshSceneShader, "uProjection");
-
-	m_geom = renderSystem.CreateGeometryBuffer(BufferUsage::StaticDraw, (unsigned)Countof(vert), (unsigned)sizeof(BaseVertex), vert,
-		(unsigned)Countof(indices), IndexFormat::UInt32, indices, BaseSceneShader);
+	m_geom = renderSystem.CreateGeometryBuffer(BufferUsage::StaticDraw, (unsigned)Countof(vert), (unsigned)sizeof(BaseVertex), vert, (unsigned)Countof(indices), IndexFormat::UInt32, indices, BaseSceneShader);
 
 	m_texture = renderSystem.CreateTexture2D("../Data/Textures/texel_checker.png");
 
-	m_model = graphicsSystem.CreateModel("../Data/Models/crate.obj", "../Data/Models/");
-	m_model->subMeshes[0].material.diffuseTexture = m_texture;
-
-	m_camera.Teleport(glm::vec3(0.0f, 5.0f, -5.0f));
+	m_camera.Teleport(glm::vec3(0.0f, 1.0f, -3.0f));
 
 	GetInputSystem().SetMouseLock(true);
+
+
+	for (size_t x = 0; x < AreaSizeXZ; x++)
+	{
+		for (size_t z = 0; z < AreaSizeXZ; z++)
+		{
+			map.SetTile(
+				{ 
+					.desc = { .type = TileType::Solid },
+				}, x, z);
+		}
+	}
+
+	//map.SetTile(
+	//	{
+	//		.desc = {.type = TileType::None },
+	//	}, 5, 5);
+
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = 4,
+		}, 5, 5);
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = -4,
+		}, 6, 5);
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = 2,
+		}, 7, 5);
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = 1,
+		}, 8, 5);
+
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = -17,
+		}, 4, 5);
+
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = -4,
+		}, 5, 4);
+
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = -4,
+		}, 5, 6);
+
+
+	map.SetTile(
+		{
+			.desc = {.type = TileType::Solid },
+			.posY = -4,
+		}, 4, 4);
+
+	map.BuildMesh(BaseSceneShader);
+
+
+
+
+
 
 	return true;
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Destroy()
 {
-	m_model.reset();
-	MeshSceneShader.reset();
 	BaseSceneShader.reset();
 	m_geom.reset();
 	m_texture.reset();
@@ -85,43 +187,13 @@ void GameApp01::Render()
 
 	renderSystem.ClearFrame();
 
-	{
-		graphicsSystem.BindRenderTarget(rt);
-		renderSystem.SetClearColor({ 0.1f, 0.1f, 0.1f });
-		renderSystem.ClearFrame();
-
-		renderSystem.Bind(m_texture);
-		renderSystem.Bind(BaseSceneShader);
-		renderSystem.SetUniform(BaseSceneShaderUniformProjectionMatrix, m_perspective * m_camera.GetViewMatrix());
-		renderSystem.SetUniform("Texture", 0);
-		renderSystem.Draw(m_geom->vao);
-
-
-		renderSystem.Bind(m_texture);
-		renderSystem.Bind(MeshSceneShader);
-		renderSystem.SetUniform("DiffuseTexture", 0);
-		renderSystem.SetUniform(MeshSceneShaderUniformWorldMatrix, glm::mat4(1.0f));
-		renderSystem.SetUniform(MeshSceneShaderUniformViewMatrix, m_camera.GetViewMatrix());
-		renderSystem.SetUniform(MeshSceneShaderUniformProjectionMatrix, m_perspective);
-		graphicsSystem.Draw(m_model);
-	}
-
-	renderSystem.MainScreen();
-	renderSystem.SetClearColor({ 0.1f, 0.1f, 0.1f });
-
-	graphicsSystem.BindRenderTargetAsTexture(rt, 0);
+	renderSystem.Bind(m_texture);
 	renderSystem.Bind(BaseSceneShader);
 	renderSystem.SetUniform(BaseSceneShaderUniformProjectionMatrix, m_perspective * m_camera.GetViewMatrix());
 	renderSystem.SetUniform("Texture", 0);
-	renderSystem.Draw(m_geom->vao);
+	renderSystem.Draw(map.geom);
+	//renderSystem.Draw(m_geom);
 
-	renderSystem.Bind(m_texture);
-	renderSystem.Bind(MeshSceneShader);
-	renderSystem.SetUniform("DiffuseTexture", 0);
-	renderSystem.SetUniform(MeshSceneShaderUniformWorldMatrix, glm::mat4(1.0f));
-	renderSystem.SetUniform(MeshSceneShaderUniformViewMatrix, m_camera.GetViewMatrix());
-	renderSystem.SetUniform(MeshSceneShaderUniformProjectionMatrix, m_perspective);
-	graphicsSystem.Draw(m_model);
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Update(float deltaTime)

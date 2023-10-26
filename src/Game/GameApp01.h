@@ -14,7 +14,6 @@ private:
 
 	glm::mat4 m_perspective;
 	GeometryBufferRef m_geom;
-	StaticModelRef m_model;
 	Texture2DRef m_texture;
 
 	Camera m_camera;

@@ -700,7 +700,7 @@
     <ClCompile Include="GameApp01.cpp">
       <Filter>_GAME01</Filter>
     </ClCompile>
-    <ClCompile Include="CubeEngine.cpp">
+    <ClCompile Include="MapEngine.cpp">
       <Filter>_GAME01</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1525,7 +1525,7 @@
     <ClInclude Include="GameApp01.h">
       <Filter>_GAME01</Filter>
     </ClInclude>
-    <ClInclude Include="CubeEngine.h">
+    <ClInclude Include="MapEngine.h">
       <Filter>_GAME01</Filter>
     </ClInclude>
   </ItemGroup>
