@@ -13,8 +13,7 @@ private:
 	int m_windowHeight = 0;
 
 	glm::mat4 m_perspective;
-	GeometryBufferRef m_geom;
-	Texture2DRef m_texture;
+	Texture2DRef m_textures[2];
 
 	Camera m_camera;
 };

@@ -10,3 +10,11 @@ struct BaseVertex final
 	glm::vec2 texCoord;
 	glm::vec4 color;
 };
+
+struct TileVertex final
+{
+	glm::vec3 position;
+	glm::vec3 normal;
+	glm::vec2 texCoord;
+	glm::vec4 color;
+};

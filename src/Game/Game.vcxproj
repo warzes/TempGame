@@ -175,6 +175,7 @@
     <ClCompile Include="ConvexShape3D.cpp" />
     <ClCompile Include="CSGPolygon.cpp" />
     <ClCompile Include="CSGPolygonPath.cpp" />
+    <ClCompile Include="GeometryMap.cpp" />
     <ClCompile Include="MapEngine.cpp" />
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="CylinderModel.cpp" />
@@ -428,6 +429,7 @@
     <ClInclude Include="ConvexShape3D.h" />
     <ClInclude Include="CSGPolygon.h" />
     <ClInclude Include="CSGPolygonPath.h" />
+    <ClInclude Include="GeometryMap.h" />
     <ClInclude Include="MapEngine.h" />
     <ClInclude Include="CustomModelShaderVariable.h" />
     <ClInclude Include="Cylinder.h" />

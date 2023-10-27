@@ -6,8 +6,10 @@
 //-----------------------------------------------------------------------------
 namespace
 {
-	ShaderProgramRef BaseSceneShader;
-	Uniform BaseSceneShaderUniformProjectionMatrix;
+	ShaderProgramRef TileShader;
+	Uniform TileShaderUniformProjectionMatrix;
+	Uniform TileShaderUniformViewMatrix;
+	Uniform TileShaderWorldViewMatrix;
 	Map map;
 }
 //-----------------------------------------------------------------------------
@@ -15,81 +17,23 @@ bool GameApp01::Create()
 {
 	//glEnable(GL_CULL_FACE); // для теста - треугольник выше против часой стрелки
 
-	BaseVertex vert[] =
-	{
-		// вверх
-		BaseVertex({ -0.5f, 0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f, 0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-		// лево
-		BaseVertex({ -0.5f,  0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f,  0.5f, -0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f,  0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-		// право
-		BaseVertex({ 0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ 0.5f,  0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ 0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ 0.5f, -0.5f,  0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-		// низ
-		BaseVertex({  0.5f, -0.5f,  0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f,  0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-		// перед
-		BaseVertex({ -0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f,  0.5f, -0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-		// зад
-		BaseVertex({  0.5f,  0.5f, 0.5f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f,  0.5f, 0.5f}, {1.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({  0.5f, -0.5f, 0.5f}, {0.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-		BaseVertex({ -0.5f, -0.5f, 0.5f}, {1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f}),
-
-	};
-
-
-	unsigned int indices[] = {
-		0, 1, 2,
-		2, 1, 3,
-
-		4, 5, 6,
-		6, 5, 7,
-
-		8, 9, 10,
-		10, 9, 11,
-
-		12, 13, 14,
-		14, 13, 15,
-
-		16, 17, 18,
-		18, 17, 19,
-
-		20, 21, 22,
-		22, 21, 23
-	};
-
 	auto& renderSystem = GetRenderSystem();
-	auto& graphicsSystem = GetGraphicsSystem();
 
-	BaseSceneShader = CreateBaseSceneShader();
-	BaseSceneShaderUniformProjectionMatrix = renderSystem.GetUniform(BaseSceneShader, "pvMatrix");
+	TileShader = CreateTileSceneShader();
+	TileShaderUniformProjectionMatrix = renderSystem.GetUniform(TileShader, "projectionMatrix");
+	TileShaderUniformViewMatrix = renderSystem.GetUniform(TileShader, "viewMatrix");
+	TileShaderWorldViewMatrix = renderSystem.GetUniform(TileShader, "worldMatrix");
 
-	m_geom = renderSystem.CreateGeometryBuffer(BufferUsage::StaticDraw, (unsigned)Countof(vert), (unsigned)sizeof(BaseVertex), vert, (unsigned)Countof(indices), IndexFormat::UInt32, indices, BaseSceneShader);
+	m_textures[0] = renderSystem.CreateTexture2D("../Data/Textures/testTop.png");
 
-	m_texture = renderSystem.CreateTexture2D("../Data/Textures/texel_checker.png");
+	Texture2DInfo info;
+	info.wrapS = TextureAddressMode::ClampToEdge;
+	info.wrapT = TextureAddressMode::ClampToEdge;
+	m_textures[1] = renderSystem.CreateTexture2D("../Data/Textures/testWall.png", true, info);
 
 	m_camera.Teleport(glm::vec3(0.0f, 1.0f, -3.0f));
 
 	GetInputSystem().SetMouseLock(true);
-
 
 	for (size_t x = 0; x < AreaSizeXZ; x++)
 	{
@@ -97,7 +41,8 @@ bool GameApp01::Create()
 		{
 			map.SetTile(
 				{ 
-					.desc = { .type = TileType::Solid },
+					.type = TileType::Solid,
+					.textureWallId = 1
 				}, x, z);
 		}
 	}
@@ -109,65 +54,107 @@ bool GameApp01::Create()
 
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = 4,
 		}, 5, 5);
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = -4,
 		}, 6, 5);
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = 2,
 		}, 7, 5);
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = 1,
 		}, 8, 5);
 
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = -17,
 		}, 4, 5);
 
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = -4,
 		}, 5, 4);
 
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = -4,
 		}, 5, 6);
 
 
 	map.SetTile(
 		{
-			.desc = {.type = TileType::Solid },
+			.type = TileType::Solid,
+			.textureWallId = 1,
 			.posY = -4,
 		}, 4, 4);
 
-	map.BuildMesh(BaseSceneShader);
+
+	//map.SetTile(
+	//	{
+	//		.type = TileType::Solid,
+	//		.textureWallId = 1,
+	//		.posY = 4,
+	//	}, 7, 2);
+	
+	map.SetTile(
+		{
+			.type = TileType::RampL,
+			.textureWallId = 1,
+			.posY = 4,
+		}, 6, 2);
+
+	map.SetTile(
+		{
+			.type = TileType::RampR,
+			.textureWallId = 1,
+			.posY = 4,
+		}, 8, 2);
+
+
+	map.SetTile(
+		{
+			.type = TileType::RampT,
+			.textureWallId = 1,
+			.posY = 4,
+		}, 7, 1);
+
+	map.SetTile(
+		{
+			.type = TileType::RampB,
+			.textureWallId = 1,
+			.posY = 4,
+		}, 7, 3);
 
 
 
-
-
+	map.BuildMesh(TileShader);
 
 	return true;
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Destroy()
 {
-	BaseSceneShader.reset();
-	m_geom.reset();
-	m_texture.reset();
+	TileShader.reset();
+	m_textures[0].reset();
+	m_textures[1].reset();
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Render()
@@ -186,14 +173,22 @@ void GameApp01::Render()
 	// не рисует с NOT_USE_LEFT_HANDED_MATH
 
 	renderSystem.ClearFrame();
-
-	renderSystem.Bind(m_texture);
-	renderSystem.Bind(BaseSceneShader);
-	renderSystem.SetUniform(BaseSceneShaderUniformProjectionMatrix, m_perspective * m_camera.GetViewMatrix());
+	
+	renderSystem.Bind(TileShader);
+	renderSystem.SetUniform(TileShaderUniformProjectionMatrix, m_perspective);
+	renderSystem.SetUniform(TileShaderUniformViewMatrix, m_camera.GetViewMatrix());
+	renderSystem.SetUniform(TileShaderWorldViewMatrix, glm::mat4(1.0f));
 	renderSystem.SetUniform("Texture", 0);
-	renderSystem.Draw(map.geom);
-	//renderSystem.Draw(m_geom);
 
+	for (size_t i = 0; i < map.geomMap.arr.size(); i++)
+	{
+		if (map.geomMap.arr[i].textureId == 0)
+			renderSystem.Bind(m_textures[0]);
+		else if (map.geomMap.arr[i].textureId == 1)
+			renderSystem.Bind(m_textures[1]);
+
+		renderSystem.Draw(map.geomMap.arr[i].geom);
+	}
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Update(float deltaTime)

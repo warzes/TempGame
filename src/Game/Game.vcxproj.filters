@@ -703,6 +703,9 @@
     <ClCompile Include="MapEngine.cpp">
       <Filter>_GAME01</Filter>
     </ClCompile>
+    <ClCompile Include="GeometryMap.cpp">
+      <Filter>_GAME01</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseSceneShader.h" />
@@ -1526,6 +1529,9 @@
       <Filter>_GAME01</Filter>
     </ClInclude>
     <ClInclude Include="MapEngine.h">
+      <Filter>_GAME01</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryMap.h">
       <Filter>_GAME01</Filter>
     </ClInclude>
   </ItemGroup>
