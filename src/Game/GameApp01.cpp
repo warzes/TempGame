@@ -3,6 +3,18 @@
 #include "BaseSceneShader.h"
 #include "Vertex.h"
 #include "MapEngine.h"
+
+/*
+
+блокам сделать возможность смещаться на 1-2 пикселя вверх или вниз чтобы полчить эффект
+https://www.youtube.com/watch?v=OeY_0Mk_0DQ
+
+подумать над этим
+	https://www.youtube.com/watch?v=FuVlAJl5NOc
+
+*/
+
+
 //-----------------------------------------------------------------------------
 namespace
 {
@@ -18,6 +30,11 @@ bool GameApp01::Create()
 	//glEnable(GL_CULL_FACE); // для теста - треугольник выше против часой стрелки
 
 	auto& renderSystem = GetRenderSystem();
+
+
+	auto tempModel = LoadModel("../Data/Models/robot.glb");
+
+
 
 	TileShader = CreateTileSceneShader();
 	TileShaderUniformProjectionMatrix = renderSystem.GetUniform(TileShader, "projectionMatrix");
