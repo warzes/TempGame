@@ -14,6 +14,33 @@ https://www.youtube.com/watch?v=OeY_0Mk_0DQ
 
 */
 
+по юнити и данженкравлу
+вот в таком же стиле
+https ://github.com/davemoore22/sorcery
+
+
+по кубу
+https ://nusan.itch.io/pcraft
+https://github.com/jdah/microcraft
+
+возможность убирать стены(например в будущем можно добавл€ть тайл деталиции - тогда не надо рисовать стену за ним
+
+
+	по тайлам - чтобы не сливалось - можно кра€ рисовать более темным(например кра€ травы темнозеленым.как на 9d0cf182aa9af61f8c4b3675c9cfdeea.jpg
+
+
+
+
+		новый метод блоков
+
+		»з вокселей
+
+		при этом называетс€ 3д тайлом
+
+		есть файл описани€ при создании
+
+		при этом нужно резать модели по стороном(лево, право, вверх, вниз, перед, зад) - чтобы можно было эффективно выкидывать невидимое
+
 
 //-----------------------------------------------------------------------------
 namespace
@@ -22,7 +49,21 @@ namespace
 	Uniform TileShaderUniformProjectionMatrix;
 	Uniform TileShaderUniformViewMatrix;
 	Uniform TileShaderWorldViewMatrix;
+
+	ShaderProgramRef NewMeshShader;
+	Uniform NewMeshShaderUniformProjectionMatrix;
+	Uniform NewMeshShaderUniformViewMatrix;
+	Uniform NewMeshShaderWorldViewMatrix;
 	Map map;
+
+
+
+	NewModel tempModel;
+	// Load gltf model animations
+	unsigned int animsCount = 0;
+	unsigned int animIndex = 0;
+	unsigned int animCurrentFrame = 0;
+	ModelAnimation* modelAnimations;
 }
 //-----------------------------------------------------------------------------
 bool GameApp01::Create()
@@ -31,9 +72,13 @@ bool GameApp01::Create()
 
 	auto& renderSystem = GetRenderSystem();
 
+	NewMeshShader = CreateNewMeshSceneShader();
+	NewMeshShaderUniformProjectionMatrix = renderSystem.GetUniform(NewMeshShader, "uProjection");
+	NewMeshShaderUniformViewMatrix = renderSystem.GetUniform(NewMeshShader, "uView");
+	NewMeshShaderWorldViewMatrix = renderSystem.GetUniform(NewMeshShader, "uWorld");
 
-	auto tempModel = LoadModel("../Data/Models/robot.glb");
-
+	tempModel = LoadModel("../Data/Models/robot.glb", NewMeshShader);
+	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", &animsCount);
 
 
 	TileShader = CreateTileSceneShader();
@@ -206,6 +251,17 @@ void GameApp01::Render()
 
 		renderSystem.Draw(map.geomMap.arr[i].geom);
 	}
+
+	renderSystem.Bind(NewMeshShader);
+	renderSystem.SetUniform(NewMeshShaderUniformProjectionMatrix, m_perspective);
+	renderSystem.SetUniform(NewMeshShaderUniformViewMatrix, m_camera.GetViewMatrix());
+	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::mat4(1.0f));
+	renderSystem.SetUniform("Texture", 0);
+
+	for (size_t i = 0; i < tempModel.meshCount; i++)
+	{
+		renderSystem.Draw(tempModel.meshes[i].geometry);
+	}
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Update(float deltaTime)
@@ -227,5 +283,15 @@ void GameApp01::Update(float deltaTime)
 	glm::vec2 delta = GetInputSystem().GetMouseDeltaPosition();
 	if (delta.x != 0.0f)  m_camera.RotateLeftRight(delta.x * mouseSensitivity);
 	if (delta.y != 0.0f)  m_camera.RotateUpDown(-delta.y * mouseSensitivity);
+
+
+	/*
+	ANIM	
+	*/
+
+	// Update model animation
+	ModelAnimation anim = modelAnimations[animIndex];
+	animCurrentFrame = (animCurrentFrame + 1) % anim.frameCount;
+	UpdateModelAnimation(tempModel, anim, animCurrentFrame);
 }
 //-----------------------------------------------------------------------------
