@@ -81,7 +81,7 @@ bool GameApp01::Create()
 	NewMeshShaderWorldViewMatrix = renderSystem.GetUniform(NewMeshShader, "uWorld");
 
 	tempModel = LoadModel("../Data/Models/robot.glb");
-	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", &animsCount);
+	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", animsCount);
 
 
 	TileShader = CreateTileSceneShader();
@@ -293,7 +293,7 @@ void GameApp01::Render()
 	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::mat4(1.0f));
 	renderSystem.SetUniform("Texture", 0);
 
-	for (size_t i = 0; i < tempModel.meshCount; i++)
+	for (size_t i = 0; i < tempModel.meshes.size(); i++)
 	{
 		renderSystem.Draw(tempModel.meshes[i].geometry);
 	}
