@@ -13,34 +13,34 @@ https://www.youtube.com/watch?v=OeY_0Mk_0DQ
 	https://www.youtube.com/watch?v=FuVlAJl5NOc
 
 */
-
-по юнити и данженкравлу
-вот в таком же стиле
-https ://github.com/davemoore22/sorcery
-
-
-по кубу
-https ://nusan.itch.io/pcraft
-https://github.com/jdah/microcraft
-
-возможность убирать стены(например в будущем можно добавл€ть тайл деталиции - тогда не надо рисовать стену за ним
-
-
-	по тайлам - чтобы не сливалось - можно кра€ рисовать более темным(например кра€ травы темнозеленым.как на 9d0cf182aa9af61f8c4b3675c9cfdeea.jpg
-
-
-
-
-		новый метод блоков
-
-		»з вокселей
-
-		при этом называетс€ 3д тайлом
-
-		есть файл описани€ при создании
-
-		при этом нужно резать модели по стороном(лево, право, вверх, вниз, перед, зад) - чтобы можно было эффективно выкидывать невидимое
-
+//
+//по юнити и данженкравлу
+//вот в таком же стиле
+//https ://github.com/davemoore22/sorcery
+//
+//
+//по кубу
+//https ://nusan.itch.io/pcraft
+//https://github.com/jdah/microcraft
+//
+//возможность убирать стены(например в будущем можно добавл€ть тайл деталиции - тогда не надо рисовать стену за ним
+//
+//
+//	по тайлам - чтобы не сливалось - можно кра€ рисовать более темным(например кра€ травы темнозеленым.как на 9d0cf182aa9af61f8c4b3675c9cfdeea.jpg
+//
+//
+//
+//
+//		новый метод блоков
+//
+//		»з вокселей
+//
+//		при этом называетс€ 3д тайлом
+//
+//		есть файл описани€ при создании
+//
+//		при этом нужно резать модели по стороном(лево, право, вверх, вниз, перед, зад) - чтобы можно было эффективно выкидывать невидимое
+//
 
 //-----------------------------------------------------------------------------
 namespace
@@ -56,14 +56,17 @@ namespace
 	Uniform NewMeshShaderWorldViewMatrix;
 	Map map;
 
-
-
 	NewModel tempModel;
 	// Load gltf model animations
 	unsigned int animsCount = 0;
 	unsigned int animIndex = 0;
 	unsigned int animCurrentFrame = 0;
 	ModelAnimation* modelAnimations;
+
+	Texture2DRef TestTexture;
+	ShaderProgramRef TestShader;
+	Uniform TestUniformProjectionMatrix;
+	GeometryBufferRef TestGeom;
 }
 //-----------------------------------------------------------------------------
 bool GameApp01::Create()
@@ -77,7 +80,7 @@ bool GameApp01::Create()
 	NewMeshShaderUniformViewMatrix = renderSystem.GetUniform(NewMeshShader, "uView");
 	NewMeshShaderWorldViewMatrix = renderSystem.GetUniform(NewMeshShader, "uWorld");
 
-	tempModel = LoadModel("../Data/Models/robot.glb", NewMeshShader);
+	tempModel = LoadModel("../Data/Models/robot.glb");
 	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", &animsCount);
 
 
@@ -97,117 +100,149 @@ bool GameApp01::Create()
 
 	GetInputSystem().SetMouseLock(true);
 
-	for (size_t x = 0; x < AreaSizeXZ; x++)
 	{
-		for (size_t z = 0; z < AreaSizeXZ; z++)
+		for (size_t x = 0; x < AreaSizeXZ; x++)
 		{
-			map.SetTile(
-				{ 
-					.type = TileType::Solid,
-					.textureWallId = 1
-				}, x, z);
+			for (size_t z = 0; z < AreaSizeXZ; z++)
+			{
+				map.SetTile(
+					{
+						.type = TileType::Solid,
+						.textureWallId = 1
+					}, x, z);
+			}
 		}
+
+		//map.SetTile(
+		//	{
+		//		.desc = {.type = TileType::None },
+		//	}, 5, 5);
+
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = 4,
+			}, 5, 5);
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = -4,
+			}, 6, 5);
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = 2,
+			}, 7, 5);
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = 1,
+			}, 8, 5);
+
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = -17,
+			}, 4, 5);
+
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = -4,
+			}, 5, 4);
+
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = -4,
+			}, 5, 6);
+
+
+		map.SetTile(
+			{
+				.type = TileType::Solid,
+				.textureWallId = 1,
+				.posY = -4,
+			}, 4, 4);
+
+
+		//map.SetTile(
+		//	{
+		//		.type = TileType::Solid,
+		//		.textureWallId = 1,
+		//		.posY = 4,
+		//	}, 7, 2);
+
+		map.SetTile(
+			{
+				.type = TileType::RampL,
+				.textureWallId = 1,
+				.posY = 4,
+			}, 6, 2);
+
+		map.SetTile(
+			{
+				.type = TileType::RampR,
+				.textureWallId = 1,
+				.posY = 4,
+			}, 8, 2);
+
+
+		map.SetTile(
+			{
+				.type = TileType::RampT,
+				.textureWallId = 1,
+				.posY = 4,
+			}, 7, 1);
+
+		map.SetTile(
+			{
+				.type = TileType::RampB,
+				.textureWallId = 1,
+				.posY = 4,
+			}, 7, 3);
+
+
+
+		map.BuildMesh(TileShader);
 	}
 
-	//map.SetTile(
-	//	{
-	//		.desc = {.type = TileType::None },
-	//	}, 5, 5);
-
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = 4,
-		}, 5, 5);
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = -4,
-		}, 6, 5);
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = 2,
-		}, 7, 5);
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = 1,
-		}, 8, 5);
-
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = -17,
-		}, 4, 5);
-
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = -4,
-		}, 5, 4);
-
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = -4,
-		}, 5, 6);
-
-
-	map.SetTile(
-		{
-			.type = TileType::Solid,
-			.textureWallId = 1,
-			.posY = -4,
-		}, 4, 4);
-
-
-	//map.SetTile(
-	//	{
-	//		.type = TileType::Solid,
-	//		.textureWallId = 1,
-	//		.posY = 4,
-	//	}, 7, 2);
 	
-	map.SetTile(
-		{
-			.type = TileType::RampL,
-			.textureWallId = 1,
-			.posY = 4,
-		}, 6, 2);
-
-	map.SetTile(
-		{
-			.type = TileType::RampR,
-			.textureWallId = 1,
-			.posY = 4,
-		}, 8, 2);
-
-
-	map.SetTile(
-		{
-			.type = TileType::RampT,
-			.textureWallId = 1,
-			.posY = 4,
-		}, 7, 1);
-
-	map.SetTile(
-		{
-			.type = TileType::RampB,
-			.textureWallId = 1,
-			.posY = 4,
-		}, 7, 3);
 
 
 
-	map.BuildMesh(TileShader);
+	struct testVertex
+	{
+		glm::vec3 pos;
+		glm::vec2 texCoord;
+	}
+	vert[] =
+	{
+		{{ -0.5f,  0.5f, 2.0f}, {0.0f, 0.0f}}, // top left
+		{{  0.5f,  0.5f, 2.0f}, {1.0f, 0.0f}}, // top right
+		{{  0.5f, -0.5f, 2.0f}, {1.0f, 1.0f}}, // bottom right
+		{{ -0.5f, -0.5f, 2.0f}, {0.0f, 1.0f}}, // bottom left
+
+	};
+
+	unsigned int indices[] = {  // note that we start from 0!
+		0, 3, 2,   // first triangle
+		2, 1, 0    // second triangle
+	};
+
+	TestShader = CreateTestShader();
+	TestUniformProjectionMatrix = renderSystem.GetUniform(TestShader, "projectionMatrix");
+
+	TestGeom = renderSystem.CreateGeometryBuffer(BufferUsage::StaticDraw, (unsigned)Countof(vert), (unsigned)sizeof(testVertex), vert, (unsigned)Countof(indices), IndexFormat::UInt32, indices, TestShader);
+
+	TestTexture = renderSystem.CreateTexture2D("../Data/Textures/testWall.png");
 
 	return true;
 }
@@ -262,6 +297,12 @@ void GameApp01::Render()
 	{
 		renderSystem.Draw(tempModel.meshes[i].geometry);
 	}
+
+	//renderSystem.Bind(TestTexture, 0);
+	//renderSystem.Bind(TestShader);
+	//renderSystem.SetUniform(TestUniformProjectionMatrix, m_perspective);
+	//renderSystem.SetUniform("Texture", 0);
+	//renderSystem.Draw(TestGeom);
 }
 //-----------------------------------------------------------------------------
 void GameApp01::Update(float deltaTime)
@@ -286,7 +327,7 @@ void GameApp01::Update(float deltaTime)
 
 
 	/*
-	ANIM	
+	ANIM
 	*/
 
 	// Update model animation

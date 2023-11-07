@@ -184,12 +184,46 @@ uniform sampler2D DiffuseTexture;
 
 void main()
 {
-	vec4 textureClr = texture(DiffuseTexture, fragmentTexCoord2);
-	if (textureClr.a < 0.02) discard;	
-	textureClr = texture(DiffuseTexture, fragmentTexCoord) * fragmentColor + fragmentTangents*vec4(fragmentNormal, 1.0);
+	vec4 textureClr = texture(DiffuseTexture, fragmentTexCoord) * fragmentColor;
 	if (textureClr.a < 0.02) discard;
 
 	FinalFragmentColor = textureClr;
+}
+)";
+
+	return GetRenderSystem().CreateShaderProgram({ vertexShaderText }, { fragmentShaderText });
+}
+
+[[nodiscard]] inline ShaderProgramRef CreateTestShader()
+{
+	const char* vertexShaderText = R"(
+#version 330 core
+
+layout(location = 0) in vec3 aPosition;
+layout(location = 1) in vec2 aTexCoord;
+
+uniform mat4 projectionMatrix;
+
+out vec2 TexCoord;
+
+void main()
+{
+	gl_Position = projectionMatrix * vec4(aPosition, 1.0);
+	TexCoord    = aTexCoord;
+}
+)";
+
+	const char* fragmentShaderText = R"(
+#version 330 core
+
+in vec2 TexCoord;
+out vec4 FragColor;
+
+uniform sampler2D Texture;
+
+void main()
+{
+	FragColor = texture(Texture, TexCoord);
 }
 )";
 
