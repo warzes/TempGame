@@ -80,8 +80,15 @@ bool GameApp01::Create()
 	NewMeshShaderUniformViewMatrix = renderSystem.GetUniform(NewMeshShader, "uView");
 	NewMeshShaderWorldViewMatrix = renderSystem.GetUniform(NewMeshShader, "uWorld");
 
-	tempModel = LoadModel("../Data/Models/robot.glb");
-	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", animsCount);
+	//tempModel = LoadModel("../Data/Models/robot.glb");
+	//modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", animsCount);
+	//tempModel = LoadModel("../Data/Models/cesium_man.m3d");
+	//modelAnimations = LoadModelAnimations("../Data/Models/cesium_man.m3d", animsCount);
+	tempModel = LoadModel("../Data/Models/guy.iqm");
+	modelAnimations = LoadModelAnimations("../Data/Models/guyanim.iqm", animsCount);
+
+
+
 
 
 	TileShader = CreateTileSceneShader();
