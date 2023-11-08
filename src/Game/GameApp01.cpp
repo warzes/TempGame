@@ -63,6 +63,26 @@ namespace
 	unsigned int animCurrentFrame = 0;
 	ModelAnimation* modelAnimations;
 
+	NewModel tempModel2;
+	// Load gltf model animations
+	unsigned int animsCount2 = 0;
+	unsigned int animIndex2 = 0;
+	unsigned int animCurrentFrame2 = 0;
+	ModelAnimation* modelAnimations2;
+
+	NewModel tempModel3;
+	// Load gltf model animations
+	unsigned int animsCount3 = 0;
+	unsigned int animIndex3 = 0;
+	unsigned int animCurrentFrame3 = 0;
+	ModelAnimation* modelAnimations3;
+
+
+	NewModel tempModel4;
+
+
+
+
 	Texture2DRef TestTexture;
 	ShaderProgramRef TestShader;
 	Uniform TestUniformProjectionMatrix;
@@ -80,16 +100,13 @@ bool GameApp01::Create()
 	NewMeshShaderUniformViewMatrix = renderSystem.GetUniform(NewMeshShader, "uView");
 	NewMeshShaderWorldViewMatrix = renderSystem.GetUniform(NewMeshShader, "uWorld");
 
-	//tempModel = LoadModel("../Data/Models/robot.glb");
-	//modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", animsCount);
-	//tempModel = LoadModel("../Data/Models/cesium_man.m3d");
-	//modelAnimations = LoadModelAnimations("../Data/Models/cesium_man.m3d", animsCount);
-	tempModel = LoadModel("../Data/Models/guy.iqm");
-	modelAnimations = LoadModelAnimations("../Data/Models/guyanim.iqm", animsCount);
-
-
-
-
+	tempModel = LoadModel("../Data/Models/robot.glb");
+	modelAnimations = LoadModelAnimations("../Data/Models/robot.glb", animsCount);
+	tempModel2 = LoadModel("../Data/Models/cesium_man.m3d");
+	modelAnimations2 = LoadModelAnimations("../Data/Models/cesium_man.m3d", animsCount);
+	tempModel3 = LoadModel("../Data/Models/guy.iqm");
+	modelAnimations3 = LoadModelAnimations("../Data/Models/guyanim.iqm", animsCount);
+	tempModel4 = LoadModel("../Data/Models/castle.obj");
 
 	TileShader = CreateTileSceneShader();
 	TileShaderUniformProjectionMatrix = renderSystem.GetUniform(TileShader, "projectionMatrix");
@@ -300,9 +317,28 @@ void GameApp01::Render()
 	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::mat4(1.0f));
 	renderSystem.SetUniform("Texture", 0);
 
+	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 0.0f, 0.0f)));
 	for (size_t i = 0; i < tempModel.meshes.size(); i++)
 	{
 		renderSystem.Draw(tempModel.meshes[i].geometry);
+	}
+
+	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::translate(glm::mat4(1.0f), glm::vec3(-5.0f, 0.0f, 0.0f)));
+	for (size_t i = 0; i < tempModel2.meshes.size(); i++)
+	{
+		renderSystem.Draw(tempModel2.meshes[i].geometry);
+	}
+
+	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::translate(glm::mat4(1.0f), glm::vec3(-7.0f, 0.0f, 0.0f)));
+	for (size_t i = 0; i < tempModel3.meshes.size(); i++)
+	{
+		renderSystem.Draw(tempModel3.meshes[i].geometry);
+	}
+
+	renderSystem.SetUniform(NewMeshShaderWorldViewMatrix, glm::translate(glm::mat4(1.0f), glm::vec3(-9.0f, 0.0f, 40.0f)));
+	for (size_t i = 0; i < tempModel4.meshes.size(); i++)
+	{
+		renderSystem.Draw(tempModel4.meshes[i].geometry);
 	}
 
 	//renderSystem.Bind(TestTexture, 0);
@@ -341,5 +377,14 @@ void GameApp01::Update(float deltaTime)
 	ModelAnimation anim = modelAnimations[animIndex];
 	animCurrentFrame = (animCurrentFrame + 1) % anim.frameCount;
 	UpdateModelAnimation(tempModel, anim, animCurrentFrame);
+
+	anim = modelAnimations2[animIndex2];
+	animCurrentFrame2 = (animCurrentFrame2 + 1) % anim.frameCount;
+	UpdateModelAnimation(tempModel2, anim, animCurrentFrame2);
+
+	anim = modelAnimations3[animIndex3];
+	animCurrentFrame3 = (animCurrentFrame3 + 1) % anim.frameCount;
+	UpdateModelAnimation(tempModel3, anim, animCurrentFrame3);
+
 }
 //-----------------------------------------------------------------------------

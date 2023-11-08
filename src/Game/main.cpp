@@ -1,6 +1,29 @@
 ﻿#include "stdafx.h"
 #include "TestApp.h"
 #include "GameApp01.h"
+
+СОЗДАТЬ ПРОЕКТ
+
+идея
+
+
+простой рогалик от первого лица в стиле DungeonsOfMysteria
+для визуала
+
+https ://lindou.itch.io/modular-dungeon - это можно и в магикавокселе
+https://maxparata.itch.io
+
+блендер
+и https ://www.youtube.com/watch?v=d7hqdqfmeiw&t=553s
+
+в блокбенче(посмотреть какие там есть плагины)
+https ://www.youtube.com/watch?v=WmYwvtOo4W0
+
+
+	https ://itch.io/game-assets/tag-voxel
+
+
+
 //-----------------------------------------------------------------------------
 #if defined(_MSC_VER)
 #	pragma comment( lib, "Engine.lib" )
