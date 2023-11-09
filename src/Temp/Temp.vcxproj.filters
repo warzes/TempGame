@@ -1,0 +1,1837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TestApp.cpp" />
+    <ClCompile Include="Matrix2.cpp">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3.cpp">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Point2.cpp">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClCompile>
+    <ClCompile Include="Point3.cpp">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClCompile>
+    <ClCompile Include="Point4.cpp">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClCompile>
+    <ClCompile Include="Bezier.cpp">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClCompile>
+    <ClCompile Include="MathFunction.cpp">
+      <Filter>temp\common\math\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="PascalTriangle.cpp">
+      <Filter>temp\common\math\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="AngleConverter.cpp">
+      <Filter>temp\common\math\trigonometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexObject3D.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexShape3D.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Line3D.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexedTriangle3D.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle3D.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxShape.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CapsuleShape.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ConeShape.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHullShape3D.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CylinderShape.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereShape.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleShape3D.cpp">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBox.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Capsule.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Cone.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHull3D.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="GJKResult.cpp">
+      <Filter>temp\common\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Simplex.cpp">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfilerNode.cpp">
+      <Filter>temp\common\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiler.cpp">
+      <Filter>temp\common\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopeProfiler.cpp">
+      <Filter>temp\common\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="Cylinder.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="LineSegment3D.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="OBBox.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetrahedron.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle3D.cpp">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeConvexHull3DService.cpp">
+      <Filter>temp\common\math\geometry\3d\util</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtil.cpp">
+      <Filter>temp\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="Observable.cpp">
+      <Filter>temp\common\pattern\observer</Filter>
+    </ClCompile>
+    <ClCompile Include="SingletonContainer.cpp">
+      <Filter>temp\common\pattern\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="TaggableResource.cpp">
+      <Filter>temp\common\pattern\tag</Filter>
+    </ClCompile>
+    <ClCompile Include="TagHolder.cpp">
+      <Filter>temp\common\pattern\tag</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsTransform.cpp">
+      <Filter>temp\physics\utils\math</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionBoxShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionShape3D.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConvexObject3D.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionBoxObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCapsuleObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConeObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConvexHullObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCylinderObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSphereObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionTriangleObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="TemporalObject.cpp">
+      <Filter>temp\physics\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConvexObjectPool.cpp">
+      <Filter>temp\physics\object\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectDeleter.cpp">
+      <Filter>temp\physics\object\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="EagerPropertyLoader.cpp">
+      <Filter>temp\physics\utils\property</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCapsuleShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCompoundShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConeShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionConvexHullShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionCylinderShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionHeightfieldShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSphereShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionTriangleShape.cpp">
+      <Filter>temp\physics\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="InertiaCalculation.cpp">
+      <Filter>temp\physics\body</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyMomentum.cpp">
+      <Filter>temp\physics\body</Filter>
+    </ClCompile>
+    <ClCompile Include="IslandElement.cpp">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractBody.cpp">
+      <Filter>temp\physics\body\model</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyContainer.cpp">
+      <Filter>temp\physics\body</Filter>
+    </ClCompile>
+    <ClCompile Include="GhostBody.cpp">
+      <Filter>temp\physics\body\model</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>temp\physics\body\model</Filter>
+    </ClCompile>
+    <ClCompile Include="IslandElementLink.cpp">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClCompile>
+    <ClCompile Include="IslandContainer.cpp">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyActiveStateUpdater.cpp">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClCompile>
+    <ClCompile Include="AccumulatedSolvingData.cpp">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonSolvingData.cpp">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpulseSolvingData.cpp">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstraintSolver.cpp">
+      <Filter>temp\physics\collision\constraintsolver</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstraintSolvingData.cpp">
+      <Filter>temp\physics\collision\constraintsolver</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegrateVelocity.cpp">
+      <Filter>temp\physics\collision\integration</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegrateTransform.cpp">
+      <Filter>temp\physics\collision\integration</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyAABBTree.cpp">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyAABBNodeData.cpp">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBTreeAlgorithm.cpp">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadPhase.cpp">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorPairContainer.cpp">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncVectorPairContainer.cpp">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="ContinuousCollisionResult.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\continuous</Filter>
+    </ClCompile>
+    <ClCompile Include="GJKContinuousCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\continuous</Filter>
+    </ClCompile>
+    <ClCompile Include="EPAResult.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClCompile>
+    <ClCompile Include="EPATriangleData.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClCompile>
+    <ClCompile Include="EPAAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClCompile>
+    <ClCompile Include="GJKConvexObjectWrapper.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm\gjk</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionAlgorithmSelector.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundAnyCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcaveAnyCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexConvexCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereBoxCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereSphereCollisionAlgorithm.cpp">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionObjectWrapper.cpp">
+      <Filter>temp\physics\collision\narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="NarrowPhase.cpp">
+      <Filter>temp\physics\collision\narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionWorld.cpp">
+      <Filter>temp\physics\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ManifoldContactPoint.cpp">
+      <Filter>temp\physics\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ManifoldResult.cpp">
+      <Filter>temp\physics\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="OverlappingPair.cpp">
+      <Filter>temp\physics\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="LockById.cpp">
+      <Filter>temp\common\system\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopeLockById.cpp">
+      <Filter>temp\common\system\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterController.cpp">
+      <Filter>temp\physics\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterControllerConfig.cpp">
+      <Filter>temp\physics\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterEventCallback.cpp">
+      <Filter>temp\physics\character</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsCharacter.cpp">
+      <Filter>temp\physics\character</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsWorld.cpp">
+      <Filter>temp\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionVisualizer.cpp">
+      <Filter>temp\physics\visualizer</Filter>
+    </ClCompile>
+    <ClCompile Include="RayTestResult.cpp">
+      <Filter>temp\physics\processable\raytest</Filter>
+    </ClCompile>
+    <ClCompile Include="RayTester.cpp">
+      <Filter>temp\physics\processable\raytest</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>temp\engine\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceContainer.cpp">
+      <Filter>temp\engine\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="UvScale.cpp">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialBuilder.cpp">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshService.cpp">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstMesh.cpp">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstAnimation.cpp">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitBoundingBox.cpp">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstMeshes.cpp">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderMaterial.cpp">
+      <Filter>temp\engine\loader</Filter>
+    </ClCompile>
+    <ClCompile Include="UdaAttribute.cpp">
+      <Filter>temp\common\io\uda</Filter>
+    </ClCompile>
+    <ClCompile Include="UdaChunk.cpp">
+      <Filter>temp\common\io\uda</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeConverter.cpp">
+      <Filter>temp\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="UdaParser.cpp">
+      <Filter>temp\common\io\uda</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderMesh.cpp">
+      <Filter>temp\engine\loader</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderAnim.cpp">
+      <Filter>temp\engine\loader</Filter>
+    </ClCompile>
+    <ClCompile Include="AICharacter.cpp">
+      <Filter>temp\ai\character</Filter>
+    </ClCompile>
+    <ClCompile Include="AIWorld.cpp">
+      <Filter>temp\ai\input</Filter>
+    </ClCompile>
+    <ClCompile Include="AITerrain.cpp">
+      <Filter>temp\ai\input</Filter>
+    </ClCompile>
+    <ClCompile Include="AIShape.cpp">
+      <Filter>temp\ai\input</Filter>
+    </ClCompile>
+    <ClCompile Include="AIObject.cpp">
+      <Filter>temp\ai\input</Filter>
+    </ClCompile>
+    <ClCompile Include="AIEntity.cpp">
+      <Filter>temp\ai\input</Filter>
+    </ClCompile>
+    <ClCompile Include="AICharacterController.cpp">
+      <Filter>temp\ai\character</Filter>
+    </ClCompile>
+    <ClCompile Include="Clipper.cpp">
+      <Filter>temp\ai\libs\clipper</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGPolygon.cpp">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGPolygonPath.cpp">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonsSubtraction.cpp">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonsUnion.cpp">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeLinkResult.cpp">
+      <Filter>temp\ai\path\navmesh\link</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeLinkDetection.cpp">
+      <Filter>temp\ai\path\navmesh\link</Filter>
+    </ClCompile>
+    <ClCompile Include="NavTerrainTopography.cpp">
+      <Filter>temp\ai\path\navmesh\model\output\topography</Filter>
+    </ClCompile>
+    <ClCompile Include="NavLinkConstraint.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavLink.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMesh.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMeshAgent.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavPolygon.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavTriangle.cpp">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClCompile>
+    <ClCompile Include="NavModelCopy.cpp">
+      <Filter>temp\ai\path\navmesh\model</Filter>
+    </ClCompile>
+    <ClCompile Include="NavObject.cpp">
+      <Filter>temp\ai\path\navmesh\model</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangulationAlgorithm.cpp">
+      <Filter>temp\ai\path\navmesh\triangulation</Filter>
+    </ClCompile>
+    <ClCompile Include="NavObjectAABBNodeData.cpp">
+      <Filter>temp\ai\path\navmesh\polytope\aabbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneSurfaceSplitService.cpp">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainObstacleService.cpp">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSplitService.cpp">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClCompile>
+    <ClCompile Include="Polytope.cpp">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClCompile>
+    <ClCompile Include="PolytopeBuilder.cpp">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClCompile>
+    <ClCompile Include="PolytopePlaneSurface.cpp">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClCompile>
+    <ClCompile Include="PolytopeSurface.cpp">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClCompile>
+    <ClCompile Include="PolytopeTerrainSurface.cpp">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMeshGenerator.cpp">
+      <Filter>temp\ai\path\navmesh</Filter>
+    </ClCompile>
+    <ClCompile Include="FunnelAlgorithm.cpp">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindingAStar.cpp">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathNode.cpp">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathPortal.cpp">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathPoint.cpp">
+      <Filter>temp\ai\path</Filter>
+    </ClCompile>
+    <ClCompile Include="PathRequest.cpp">
+      <Filter>temp\ai\path</Filter>
+    </ClCompile>
+    <ClCompile Include="AIEnvironment.cpp">
+      <Filter>temp\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="SleepUtil.cpp">
+      <Filter>temp\common\system\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizePolygon2DService.cpp">
+      <Filter>temp\common\math\geometry\2d\util</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexObject2D.cpp">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="LineSegment2D.cpp">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Line2D.cpp">
+      <Filter>temp\common\math\geometry\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGCircle.cpp">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGLine.cpp">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGPolygon.cpp">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGShape.cpp">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGExporter.cpp">
+      <Filter>temp\common\io\svg</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle2D.cpp">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleShape.cpp">
+      <Filter>temp\common\math\geometry\2d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="HeightfieldPointHelper.cpp">
+      <Filter>temp\common\math\geometry\3d\util</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHull2D.cpp">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHullShape2D.cpp">
+      <Filter>temp\common\math\geometry\2d\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeConvexHull2DService.cpp">
+      <Filter>temp\common\math\geometry\2d\util</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexedTriangle2D.cpp">
+      <Filter>temp\common\math\geometry\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="UnicodeUtil.cpp">
+      <Filter>temp\engine\resources\font</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>temp\engine\resources\font</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderTTF.cpp">
+      <Filter>temp\engine\loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraSpaceService.cpp">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="FpsCamera.cpp">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeCamera.cpp">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryContainer.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="BlendFunction.cpp">
+      <Filter>temp\render\data</Filter>
+    </ClCompile>
+    <ClCompile Include="DataContainer.cpp">
+      <Filter>temp\render\data</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexContainer.cpp">
+      <Filter>temp\render\data</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericRendererBuilder.cpp">
+      <Filter>temp\render</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianglesModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="OBBoxModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="CylinderModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHullModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ConeModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="CapsuleModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBoxModel.cpp">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshes.cpp">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelDisplayable.cpp">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelInstanceDisplayer.cpp">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClCompile>
+    <ClCompile Include="FileUtil.cpp">
+      <Filter>temp\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="UserAuthorityException.cpp">
+      <Filter>temp\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSerializer.cpp">
+      <Filter>temp\common\io\map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseSceneShader.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TestApp.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Matrix4.h">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix2.h">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3.h">
+      <Filter>temp\common\math\algebra\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>temp\common\math\algebra\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Point2.h">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClInclude>
+    <ClInclude Include="Point3.h">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClInclude>
+    <ClInclude Include="Point4.h">
+      <Filter>temp\common\math\algebra\point</Filter>
+    </ClInclude>
+    <ClInclude Include="Bezier.h">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClInclude>
+    <ClInclude Include="MathValue.h">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>temp\common\math\algebra</Filter>
+    </ClInclude>
+    <ClInclude Include="MathFunction.h">
+      <Filter>temp\common\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="PascalTriangle.h">
+      <Filter>temp\common\math\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="AngleConverter.h">
+      <Filter>temp\common\math\trigonometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexObject3D.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexShape3D.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Line3D.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexedTriangle3D.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle3D.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxShape.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CapsuleShape.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ConeShape.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHullShape3D.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CylinderShape.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereShape.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleShape3D.h">
+      <Filter>temp\common\math\geometry\3d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBox.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Capsule.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Cone.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHull3D.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="GJKAlgorithm.h">
+      <Filter>temp\common\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GJKResult.h">
+      <Filter>temp\common\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Simplex.h">
+      <Filter>temp\common\math\geometry\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfilerNode.h">
+      <Filter>temp\common\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiler.h">
+      <Filter>temp\common\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeProfiler.h">
+      <Filter>temp\common\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Cylinder.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSegment3D.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="OBBox.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetrahedron.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle3D.h">
+      <Filter>temp\common\math\geometry\3d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeConvexHull3DService.h">
+      <Filter>temp\common\math\geometry\3d\util</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtil.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBNodeData.h">
+      <Filter>temp\common\partitioning\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBNode.h">
+      <Filter>temp\common\partitioning\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBTree.h">
+      <Filter>temp\common\partitioning\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="GridContainer.h">
+      <Filter>temp\common\partitioning\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorUtil.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree.h">
+      <Filter>temp\common\partitioning\octree</Filter>
+    </ClInclude>
+    <ClInclude Include="Observable.h">
+      <Filter>temp\common\pattern\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>temp\common\pattern\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Octreeable.h">
+      <Filter>temp\common\partitioning\octree</Filter>
+    </ClInclude>
+    <ClInclude Include="OctreeManager.h">
+      <Filter>temp\common\partitioning\octree</Filter>
+    </ClInclude>
+    <ClInclude Include="OctreeableHelper.h">
+      <Filter>temp\common\partitioning\octree</Filter>
+    </ClInclude>
+    <ClInclude Include="LRUCache.h">
+      <Filter>temp\common\pattern\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularFifo.h">
+      <Filter>temp\common\pattern\queue</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonInterface.h">
+      <Filter>temp\common\pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonContainer.h">
+      <Filter>temp\common\pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>temp\common\pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadSafeSingleton.h">
+      <Filter>temp\common\pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="TaggableResource.h">
+      <Filter>temp\common\pattern\tag</Filter>
+    </ClInclude>
+    <ClInclude Include="TagHolder.h">
+      <Filter>temp\common\pattern\tag</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsTransform.h">
+      <Filter>temp\physics\utils\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>temp\common</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedSizePool.h">
+      <Filter>temp\physics\utils\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncFixedSizePool.h">
+      <Filter>temp\physics\utils\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionBoxShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionShape3D.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConvexObject3D.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionBoxObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCapsuleObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConeObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConvexHullObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCylinderObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSphereObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionTriangleObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="TemporalObject.h">
+      <Filter>temp\physics\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConvexObjectPool.h">
+      <Filter>temp\physics\object\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectDeleter.h">
+      <Filter>temp\physics\object\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="EagerPropertyLoader.h">
+      <Filter>temp\physics\utils\property</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCapsuleShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCompoundShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConcaveShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConeShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionConvexHullShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCylinderShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionHeightfieldShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSphereShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionTriangleShape.h">
+      <Filter>temp\physics\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="InertiaCalculation.h">
+      <Filter>temp\physics\body</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyMomentum.h">
+      <Filter>temp\physics\body</Filter>
+    </ClInclude>
+    <ClInclude Include="IslandElement.h">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractBody.h">
+      <Filter>temp\physics\body\model</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyContainer.h">
+      <Filter>temp\physics\body</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostBody.h">
+      <Filter>temp\physics\body\model</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>temp\physics\body\model</Filter>
+    </ClInclude>
+    <ClInclude Include="IslandElementLink.h">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClInclude>
+    <ClInclude Include="IslandContainer.h">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyActiveStateUpdater.h">
+      <Filter>temp\physics\collision\bodystate</Filter>
+    </ClInclude>
+    <ClInclude Include="AccumulatedSolvingData.h">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonSolvingData.h">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpulseSolvingData.h">
+      <Filter>temp\physics\collision\constraintsolver\solvingdata</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstraintSolver.h">
+      <Filter>temp\physics\collision\constraintsolver</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstraintSolvingData.h">
+      <Filter>temp\physics\collision\constraintsolver</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegrateVelocity.h">
+      <Filter>temp\physics\collision\integration</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegrateTransform.h">
+      <Filter>temp\physics\collision\integration</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyAABBTree.h">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyAABBNodeData.h">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBTreeAlgorithm.h">
+      <Filter>temp\physics\collision\broadphase\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadPhase.h">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadPhaseAlgorithm.h">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="PairContainer.h">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorPairContainer.h">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncVectorPairContainer.h">
+      <Filter>temp\physics\collision\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="ContinuousCollisionResult.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\continuous</Filter>
+    </ClInclude>
+    <ClInclude Include="GJKContinuousCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\continuous</Filter>
+    </ClInclude>
+    <ClInclude Include="EPAResult.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClInclude>
+    <ClInclude Include="EPATriangleData.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClInclude>
+    <ClInclude Include="EPAAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\epa</Filter>
+    </ClInclude>
+    <ClInclude Include="GJKConvexObjectWrapper.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm\gjk</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionAlgorithmBuilder.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionAlgorithmSelector.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundAnyCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcaveAnyCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexConvexCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereBoxCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereSphereCollisionAlgorithm.h">
+      <Filter>temp\physics\collision\narrowphase\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionObjectWrapper.h">
+      <Filter>temp\physics\collision\narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="NarrowPhase.h">
+      <Filter>temp\physics\collision\narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionWorld.h">
+      <Filter>temp\physics\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ManifoldContactPoint.h">
+      <Filter>temp\physics\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ManifoldResult.h">
+      <Filter>temp\physics\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="OverlappingPair.h">
+      <Filter>temp\physics\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LockById.h">
+      <Filter>temp\common\system\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeLockById.h">
+      <Filter>temp\common\system\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterController.h">
+      <Filter>temp\physics\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterControllerConfig.h">
+      <Filter>temp\physics\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterEventCallback.h">
+      <Filter>temp\physics\character</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsCharacter.h">
+      <Filter>temp\physics\character</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsWorld.h">
+      <Filter>temp\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionVisualizer.h">
+      <Filter>temp\physics\visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Processable.h">
+      <Filter>temp\physics\processable</Filter>
+    </ClInclude>
+    <ClInclude Include="RayTestResult.h">
+      <Filter>temp\physics\processable\raytest</Filter>
+    </ClInclude>
+    <ClInclude Include="RayTester.h">
+      <Filter>temp\physics\processable\raytest</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsEngine.h">
+      <Filter>temp\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>temp\engine\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceContainer.h">
+      <Filter>temp\engine\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="UvScaleType.h">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshScaleAxis.h">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClInclude>
+    <ClInclude Include="UvScale.h">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialBuilder.h">
+      <Filter>temp\engine\resources\material</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshService.h">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstMesh.h">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstAnimation.h">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitBoundingBox.h">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstMeshes.h">
+      <Filter>temp\engine\resources\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>temp\engine\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderMaterial.h">
+      <Filter>temp\engine\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="UdaAttribute.h">
+      <Filter>temp\common\io\uda</Filter>
+    </ClInclude>
+    <ClInclude Include="UdaChunk.h">
+      <Filter>temp\common\io\uda</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeConverter.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="UdaParser.h">
+      <Filter>temp\common\io\uda</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderMesh.h">
+      <Filter>temp\engine\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderAnim.h">
+      <Filter>temp\engine\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="AICharacter.h">
+      <Filter>temp\ai\character</Filter>
+    </ClInclude>
+    <ClInclude Include="AICharacterEventHandler.h">
+      <Filter>temp\ai\character</Filter>
+    </ClInclude>
+    <ClInclude Include="AIWorld.h">
+      <Filter>temp\ai\input</Filter>
+    </ClInclude>
+    <ClInclude Include="AITerrain.h">
+      <Filter>temp\ai\input</Filter>
+    </ClInclude>
+    <ClInclude Include="AIShape.h">
+      <Filter>temp\ai\input</Filter>
+    </ClInclude>
+    <ClInclude Include="AIObject.h">
+      <Filter>temp\ai\input</Filter>
+    </ClInclude>
+    <ClInclude Include="AIEntity.h">
+      <Filter>temp\ai\input</Filter>
+    </ClInclude>
+    <ClInclude Include="AICharacterController.h">
+      <Filter>temp\ai\character</Filter>
+    </ClInclude>
+    <ClInclude Include="Clipper.h">
+      <Filter>temp\ai\libs\clipper</Filter>
+    </ClInclude>
+    <ClInclude Include="Earcut.h">
+      <Filter>temp\ai\libs\earcut</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGPolygon.h">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGPolygonPath.h">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonsSubtraction.h">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonsUnion.h">
+      <Filter>temp\ai\path\navmesh\csg</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeLinkResult.h">
+      <Filter>temp\ai\path\navmesh\link</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeLinkDetection.h">
+      <Filter>temp\ai\path\navmesh\link</Filter>
+    </ClInclude>
+    <ClInclude Include="NavTopography.h">
+      <Filter>temp\ai\path\navmesh\model\output\topography</Filter>
+    </ClInclude>
+    <ClInclude Include="NavTerrainTopography.h">
+      <Filter>temp\ai\path\navmesh\model\output\topography</Filter>
+    </ClInclude>
+    <ClInclude Include="NavLinkConstraint.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavLink.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMesh.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMeshAgent.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavPolygon.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavPolygonEdge.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavTriangle.h">
+      <Filter>temp\ai\path\navmesh\model\output</Filter>
+    </ClInclude>
+    <ClInclude Include="NavModelCopy.h">
+      <Filter>temp\ai\path\navmesh\model</Filter>
+    </ClInclude>
+    <ClInclude Include="NavObject.h">
+      <Filter>temp\ai\path\navmesh\model</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangulationAlgorithm.h">
+      <Filter>temp\ai\path\navmesh\triangulation</Filter>
+    </ClInclude>
+    <ClInclude Include="NavObjectAABBNodeData.h">
+      <Filter>temp\ai\path\navmesh\polytope\aabbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneSurfaceSplitService.h">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainObstacleService.h">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSplitService.h">
+      <Filter>temp\ai\path\navmesh\polytope\services</Filter>
+    </ClInclude>
+    <ClInclude Include="Polytope.h">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClInclude>
+    <ClInclude Include="PolytopeBuilder.h">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClInclude>
+    <ClInclude Include="PolytopePlaneSurface.h">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClInclude>
+    <ClInclude Include="PolytopeSurface.h">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClInclude>
+    <ClInclude Include="PolytopeTerrainSurface.h">
+      <Filter>temp\ai\path\navmesh\polytope</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMeshGenerator.h">
+      <Filter>temp\ai\path\navmesh</Filter>
+    </ClInclude>
+    <ClInclude Include="FunnelAlgorithm.h">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindingAStar.h">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathNode.h">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPortal.h">
+      <Filter>temp\ai\path\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPoint.h">
+      <Filter>temp\ai\path</Filter>
+    </ClInclude>
+    <ClInclude Include="PathRequest.h">
+      <Filter>temp\ai\path</Filter>
+    </ClInclude>
+    <ClInclude Include="AIEnvironment.h">
+      <Filter>temp\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="AIEngine.h">
+      <Filter>temp\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="SleepUtil.h">
+      <Filter>temp\common\system\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizePolygon2DService.h">
+      <Filter>temp\common\math\geometry\2d\util</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexObject2D.h">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSegment2D.h">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Line2D.h">
+      <Filter>temp\common\math\geometry\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGCircle.h">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGLine.h">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGPolygon.h">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGShape.h">
+      <Filter>temp\common\io\svg\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGExporter.h">
+      <Filter>temp\common\io\svg</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle2D.h">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexShape2D.h">
+      <Filter>temp\common\math\geometry\2d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleShape.h">
+      <Filter>temp\common\math\geometry\2d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightfieldPointHelper.h">
+      <Filter>temp\common\math\geometry\3d\util</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHull2D.h">
+      <Filter>temp\common\math\geometry\2d\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHullShape2D.h">
+      <Filter>temp\common\math\geometry\2d\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeConvexHull2DService.h">
+      <Filter>temp\common\math\geometry\2d\util</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexedTriangle2D.h">
+      <Filter>temp\common\math\geometry\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="UnicodeUtil.h">
+      <Filter>temp\engine\resources\font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>temp\engine\resources\font</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderTTF.h">
+      <Filter>temp\engine\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraSpaceService.h">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="FpsCamera.h">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeCamera.h">
+      <Filter>temp\engine\scene\renderer3d\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryContainer.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="BlendFunction.h">
+      <Filter>temp\render\data</Filter>
+    </ClInclude>
+    <ClInclude Include="DataContainer.h">
+      <Filter>temp\render\data</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexContainer.h">
+      <Filter>temp\render\data</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericRendererBuilder.h">
+      <Filter>temp\render</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="TrianglesModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="OBBoxModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="CylinderModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHullModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ConeModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="CapsuleModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBoxModel.h">
+      <Filter>temp\engine\resources\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Meshes.h">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFilter.h">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelDisplayable.h">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>temp\engine\scene\renderer3d\model</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelInstanceDisplayer.h">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayMode.h">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomModelShaderVariable.h">
+      <Filter>temp\engine\scene\renderer3d\model\displayer</Filter>
+    </ClInclude>
+    <ClInclude Include="HashUtil.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUtil.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="FileUtil.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="UserAuthorityException.h">
+      <Filter>temp\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSerializer.h">
+      <Filter>temp\common\io\map</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="temp">
+      <UniqueIdentifier>{6bd40c3b-56bb-4c80-aba9-8d476e4a5bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common">
+      <UniqueIdentifier>{16c90df3-4443-4025-b778-355bee97877e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics">
+      <UniqueIdentifier>{3d6965af-3817-484e-82f3-1a1f4516ee8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math">
+      <UniqueIdentifier>{16fd6254-c26d-4e40-94a0-d4ab32ec7cc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\algebra">
+      <UniqueIdentifier>{a1f7e135-a0bf-4394-8399-6e80f77e23e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\algebra\matrix">
+      <UniqueIdentifier>{8650d662-1d50-48ac-be18-3734fbee22fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\algebra\vector">
+      <UniqueIdentifier>{43681086-a23f-4d20-8b39-8054fc0dcab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\algorithm">
+      <UniqueIdentifier>{8317cd82-c350-4f36-8523-b1fd7e977a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\algebra\point">
+      <UniqueIdentifier>{89acd263-4a90-4936-8396-d9176738d3f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\trigonometry">
+      <UniqueIdentifier>{c9d695e9-6c77-4f33-8901-a91273a4f083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry">
+      <UniqueIdentifier>{b14648c9-4bf7-4eac-b765-c94214f87fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\2d">
+      <UniqueIdentifier>{6d994925-db0d-448d-94fb-a9d855bc5984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\3d">
+      <UniqueIdentifier>{b2914831-1ab8-47c7-87f2-986fa34c0a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\3d\object">
+      <UniqueIdentifier>{0dc490de-5e16-46e7-afed-7d175ad4d9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\3d\shape">
+      <UniqueIdentifier>{c9492d62-2bc1-4704-8dd3-2a6ffb6bf59f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\3d\util">
+      <UniqueIdentifier>{8062f2ad-e526-4220-870a-34308c638a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\2d\util">
+      <UniqueIdentifier>{4d8d8277-b861-4a34-b51c-e8ee8305c285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\2d\shape">
+      <UniqueIdentifier>{2e96e4b5-ef76-424a-b267-a86bda6def29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\math\geometry\2d\object">
+      <UniqueIdentifier>{b943428e-03ad-4c84-9530-497d470838ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\collision">
+      <UniqueIdentifier>{541cb579-2a17-4d44-be9a-095a1276dde3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\profiler">
+      <UniqueIdentifier>{5a6b4042-839f-4213-ba7d-9c0bb5f52489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\util">
+      <UniqueIdentifier>{2d66199e-9eac-49e8-9216-684d1d3e5fff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\partitioning">
+      <UniqueIdentifier>{fc08685b-0351-4f82-a0ce-5016d671cf95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\partitioning\aabbtree">
+      <UniqueIdentifier>{470b5623-2f8d-487d-8c6f-223da00d7734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\partitioning\grid">
+      <UniqueIdentifier>{60a7a647-16bf-462e-b902-086933226ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\partitioning\octree">
+      <UniqueIdentifier>{3da02569-2f22-47a3-922b-1872291d7c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern">
+      <UniqueIdentifier>{65973f11-c6cc-48ce-9cb2-75520250bb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern\observer">
+      <UniqueIdentifier>{915b6762-0b32-4e50-a29b-326a15c651cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern\cache">
+      <UniqueIdentifier>{764431ce-4da3-402e-b3dc-d4fbaafd48ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern\queue">
+      <UniqueIdentifier>{fc5e119b-0d2f-474c-8ab1-3da5c8991d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern\singleton">
+      <UniqueIdentifier>{3f28602e-7bef-4b66-9ff0-bd4f2439dea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\pattern\tag">
+      <UniqueIdentifier>{9c24515b-8778-41c4-974b-c5ab671bcd8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\body">
+      <UniqueIdentifier>{34f05463-fd48-4317-b20f-59a85cfb6a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision">
+      <UniqueIdentifier>{1c688f30-2006-4510-8c76-c26428c7bbc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\object">
+      <UniqueIdentifier>{a90ebf25-b8f4-4067-ac72-6e7351118c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\processable">
+      <UniqueIdentifier>{493fc869-5b5d-4043-96b5-0a1ac9c89879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\shape">
+      <UniqueIdentifier>{0430eeeb-ff14-40e8-ad29-8aa2278a95d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\utils">
+      <UniqueIdentifier>{a46e59ea-5d59-42d5-a799-93e70db3f025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\body\model">
+      <UniqueIdentifier>{b24910c2-a809-44e4-a735-7408dcb4eeae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\bodystate">
+      <UniqueIdentifier>{010813bf-e5a3-4515-a4f0-26f8c1db10f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\broadphase">
+      <UniqueIdentifier>{99d4a719-7183-4d07-ab69-4e6a60d01da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\broadphase\aabbtree">
+      <UniqueIdentifier>{b63bef71-c518-4c74-9696-e32c508b37c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\constraintsolver">
+      <UniqueIdentifier>{55dcf133-d77d-44e7-a369-1ee63a43f154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\constraintsolver\solvingdata">
+      <UniqueIdentifier>{24ee5691-600c-44df-8e88-04f8f3f8b1ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\integration">
+      <UniqueIdentifier>{2342222c-cd58-4e76-bfcc-8742a8857550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\narrowphase">
+      <UniqueIdentifier>{27dbe2fb-1320-4c1b-aaaf-cd6d5e96b1b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\narrowphase\algorithm">
+      <UniqueIdentifier>{cfb938fe-79d7-4b9c-82b5-a069f3454bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\narrowphase\algorithm\continuous">
+      <UniqueIdentifier>{4a857eec-4d7b-4240-83d5-10a85aa8145e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\narrowphase\algorithm\epa">
+      <UniqueIdentifier>{62decd21-515d-4957-aa97-8323d8f6b86d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\collision\narrowphase\algorithm\gjk">
+      <UniqueIdentifier>{02019473-5daf-498e-8872-c2ac4db429cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\utils\math">
+      <UniqueIdentifier>{20e0520b-8582-4211-b692-f0bc12454518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\utils\pool">
+      <UniqueIdentifier>{1369fdcf-c64a-4d4a-aa48-d152ffc6785e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\utils\property">
+      <UniqueIdentifier>{f65f0352-941d-4526-a89e-3d2bb57a3c0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\processable\raytest">
+      <UniqueIdentifier>{b8d5ef3b-d03b-4e24-a6eb-dba151ae8c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\object\pool">
+      <UniqueIdentifier>{7dabe261-622b-4a32-af83-bb92e8f8ceee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\system">
+      <UniqueIdentifier>{2bfaac1e-cd7b-47c1-a4ab-3fd8ff8856c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\system\thread">
+      <UniqueIdentifier>{24ed9649-bf1c-4930-89dd-665dd58114ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\character">
+      <UniqueIdentifier>{66ef2729-791c-45ff-a2a6-1df5d50c14f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\physics\visualizer">
+      <UniqueIdentifier>{bb5871da-c0c9-4238-b434-52697c63c0bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\io">
+      <UniqueIdentifier>{74ff5ce4-fe68-4168-8203-550f79283365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\io\uda">
+      <UniqueIdentifier>{c8198ee1-67a3-45dd-a475-19501db81c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai">
+      <UniqueIdentifier>{f46cbf52-bbb5-4b21-9165-d8a5528d9e4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\character">
+      <UniqueIdentifier>{8555a37a-1930-43b5-8e3f-fd814e0c186d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\input">
+      <UniqueIdentifier>{56b0298c-7762-4b12-a98a-2ce5523d06ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path">
+      <UniqueIdentifier>{0c34a5e3-cd3d-4fff-8fa3-44880b7cca6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh">
+      <UniqueIdentifier>{270a241c-bc61-4959-8712-3ee32cb82bc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\pathfinding">
+      <UniqueIdentifier>{88d1c789-4cac-4acf-ba46-d418105e931c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\libs">
+      <UniqueIdentifier>{52ff9b18-29c5-4020-b332-4b0d5c7fc097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\libs\clipper">
+      <UniqueIdentifier>{5d079963-35c8-4779-8bab-b10129cb40f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\libs\earcut">
+      <UniqueIdentifier>{173da469-3fd9-4e87-a871-e1b3fe2e2957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\csg">
+      <UniqueIdentifier>{614c87ef-4b05-4ce5-9822-e62f2ace38c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\link">
+      <UniqueIdentifier>{de3344d0-06cb-4faf-8dca-8143b38c9692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\model">
+      <UniqueIdentifier>{6fa9d6a4-09bd-488b-a439-1ba4847f90df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\polytope">
+      <UniqueIdentifier>{9d788a39-d156-4e46-b27d-8047b4a0f05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\triangulation">
+      <UniqueIdentifier>{3b14ca3c-41ac-491e-9bae-a65b51f521ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\model\output">
+      <UniqueIdentifier>{6f3ef36c-c560-49d0-8991-8ad959d23378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\model\output\topography">
+      <UniqueIdentifier>{492092d2-f207-431f-9c35-e329579ffd84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\polytope\aabbtree">
+      <UniqueIdentifier>{6bc38092-9a44-4bd0-98be-c233e05302ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\ai\path\navmesh\polytope\services">
+      <UniqueIdentifier>{5518a755-46cc-4138-bfa2-19ec34297146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\io\svg">
+      <UniqueIdentifier>{d756337c-7931-42fd-b9b0-92f0f54d888c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\io\svg\shape">
+      <UniqueIdentifier>{e082eb9f-a240-46e5-9906-0445f36b0b19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\render">
+      <UniqueIdentifier>{a943c2dd-3c4a-49e7-b6fe-681aa90ba077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\render\data">
+      <UniqueIdentifier>{6812fa7d-b567-4143-a78e-30a7af8b6e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\common\io\map">
+      <UniqueIdentifier>{b3652acc-b0a0-443b-b2d2-3ea6275d14c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine">
+      <UniqueIdentifier>{eb86944b-62f0-48e5-87bd-6efd5c55a8b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\loader">
+      <UniqueIdentifier>{f1a894cb-b7ae-46cc-8284-0d319b8e0a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\resources">
+      <UniqueIdentifier>{961d9873-c269-45f2-b59b-f388e2c4b7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\resources\material">
+      <UniqueIdentifier>{43639d87-4f89-47d8-9355-49dce3bdd002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\resources\model">
+      <UniqueIdentifier>{368381d9-2f09-4675-90e8-e4c500e1804a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\resources\font">
+      <UniqueIdentifier>{28b26753-2d72-49a9-8584-d5f6efd371a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\resources\geometry">
+      <UniqueIdentifier>{43401f7a-f4b5-48cb-b59f-885064592a03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene">
+      <UniqueIdentifier>{e1119b26-be6a-48ae-931e-96e0f2384a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d">
+      <UniqueIdentifier>{cb445eed-9165-4e6b-b121-7db4787d0dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\camera">
+      <UniqueIdentifier>{7eec9410-cd5c-4d63-9079-96e114e00e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\landscape">
+      <UniqueIdentifier>{81c88a72-35e3-419d-be4c-2b0c8ef98f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\landscape\fog">
+      <UniqueIdentifier>{63cd506e-e478-4e76-980a-8e25aca1a0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\landscape\sky">
+      <UniqueIdentifier>{22927323-d107-427e-ab53-359fe9210cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\landscape\terrain">
+      <UniqueIdentifier>{b3b06ed7-211d-499c-a21d-8264ed645eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\landscape\water">
+      <UniqueIdentifier>{e3295aaf-a727-4dcb-a889-1971cf1bf0c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\model">
+      <UniqueIdentifier>{d34ffb57-b6c6-49cf-bee9-7aecc5ee1f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\model\displayer">
+      <UniqueIdentifier>{eb2c9e55-2175-4961-bbb5-0f434e3644f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\model\builder">
+      <UniqueIdentifier>{61320534-5d41-40db-bdba-3d04183126e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\model\culler">
+      <UniqueIdentifier>{458ee207-86bd-4231-9f52-7cce2696c8b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\engine\scene\renderer3d\lighting">
+      <UniqueIdentifier>{4b4901cc-4be5-4ad0-a758-717b56e0e1c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="temp\aggregation">
+      <UniqueIdentifier>{1d10d079-8326-4b0a-a8d2-88254a445525}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

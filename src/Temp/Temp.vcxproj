@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{24C08A87-8EF3-47A5-916D-70FBE3B93322}</ProjectGuid>
+    <RootNamespace>Project</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\_obj\$(Configuration)\$(PlatformTarget)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\_obj\$(Configuration)\$(PlatformTarget)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);$(SolutionDir)..\TinyEngine\src\3rdparty\;$(SolutionDir)..\TinyEngine\src\Engine\;$(SolutionDir)3rdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BuildStlModules>false</BuildStlModules>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\lib\$(PlatformTarget)\$(Configuration)\;$(SolutionDir)..\_lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)3rdparty\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);$(SolutionDir)..\TinyEngine\src\3rdparty\;$(SolutionDir)..\TinyEngine\src\Engine\;$(SolutionDir)3rdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BuildStlModules>false</BuildStlModules>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\lib\$(PlatformTarget)\$(Configuration)\;$(SolutionDir)..\_lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)3rdparty\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AABBox.cpp" />
+    <ClCompile Include="AABBoxModel.cpp" />
+    <ClCompile Include="AABBTreeAlgorithm.cpp" />
+    <ClCompile Include="AbstractBody.cpp" />
+    <ClCompile Include="AccumulatedSolvingData.cpp" />
+    <ClCompile Include="AICharacter.cpp" />
+    <ClCompile Include="AICharacterController.cpp" />
+    <ClCompile Include="AIEntity.cpp" />
+    <ClCompile Include="AIEnvironment.cpp" />
+    <ClCompile Include="AIObject.cpp" />
+    <ClCompile Include="AIShape.cpp" />
+    <ClCompile Include="AITerrain.cpp" />
+    <ClCompile Include="AIWorld.cpp" />
+    <ClCompile Include="AngleConverter.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Bezier.cpp" />
+    <ClCompile Include="BlendFunction.cpp" />
+    <ClCompile Include="BodyAABBNodeData.cpp" />
+    <ClCompile Include="BodyAABBTree.cpp" />
+    <ClCompile Include="BodyActiveStateUpdater.cpp" />
+    <ClCompile Include="BodyContainer.cpp" />
+    <ClCompile Include="BodyMomentum.cpp" />
+    <ClCompile Include="BoxShape.cpp" />
+    <ClCompile Include="BroadPhase.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraSpaceService.cpp" />
+    <ClCompile Include="Capsule.cpp" />
+    <ClCompile Include="CapsuleModel.cpp" />
+    <ClCompile Include="CapsuleShape.cpp" />
+    <ClCompile Include="CharacterController.cpp" />
+    <ClCompile Include="CharacterControllerConfig.cpp" />
+    <ClCompile Include="CharacterEventCallback.cpp" />
+    <ClCompile Include="Clipper.cpp" />
+    <ClCompile Include="CollisionAlgorithm.cpp" />
+    <ClCompile Include="CollisionAlgorithmSelector.cpp" />
+    <ClCompile Include="CollisionBoxObject.cpp" />
+    <ClCompile Include="CollisionBoxShape.cpp" />
+    <ClCompile Include="CollisionCapsuleObject.cpp" />
+    <ClCompile Include="CollisionCapsuleShape.cpp" />
+    <ClCompile Include="CollisionCompoundShape.cpp" />
+    <ClCompile Include="CollisionConeObject.cpp" />
+    <ClCompile Include="CollisionConeShape.cpp" />
+    <ClCompile Include="CollisionConvexHullObject.cpp" />
+    <ClCompile Include="CollisionConvexHullShape.cpp" />
+    <ClCompile Include="CollisionConvexObject3D.cpp" />
+    <ClCompile Include="CollisionConvexObjectPool.cpp" />
+    <ClCompile Include="CollisionCylinderObject.cpp" />
+    <ClCompile Include="CollisionCylinderShape.cpp" />
+    <ClCompile Include="CollisionHeightfieldShape.cpp" />
+    <ClCompile Include="CollisionObjectWrapper.cpp" />
+    <ClCompile Include="CollisionShape3D.cpp" />
+    <ClCompile Include="CollisionSphereObject.cpp" />
+    <ClCompile Include="CollisionSphereShape.cpp" />
+    <ClCompile Include="CollisionTriangleObject.cpp" />
+    <ClCompile Include="CollisionTriangleShape.cpp" />
+    <ClCompile Include="CollisionVisualizer.cpp" />
+    <ClCompile Include="CollisionWorld.cpp" />
+    <ClCompile Include="CommonSolvingData.cpp" />
+    <ClCompile Include="CompoundAnyCollisionAlgorithm.cpp" />
+    <ClCompile Include="ConcaveAnyCollisionAlgorithm.cpp" />
+    <ClCompile Include="Cone.cpp" />
+    <ClCompile Include="ConeModel.cpp" />
+    <ClCompile Include="ConeShape.cpp" />
+    <ClCompile Include="ConstAnimation.cpp" />
+    <ClCompile Include="ConstMesh.cpp" />
+    <ClCompile Include="ConstMeshes.cpp" />
+    <ClCompile Include="ConstraintSolver.cpp" />
+    <ClCompile Include="ConstraintSolvingData.cpp" />
+    <ClCompile Include="ContinuousCollisionResult.cpp" />
+    <ClCompile Include="ConvexConvexCollisionAlgorithm.cpp" />
+    <ClCompile Include="ConvexHull2D.cpp" />
+    <ClCompile Include="ConvexHull3D.cpp" />
+    <ClCompile Include="ConvexHullModel.cpp" />
+    <ClCompile Include="ConvexHullShape2D.cpp" />
+    <ClCompile Include="ConvexHullShape3D.cpp" />
+    <ClCompile Include="ConvexObject2D.cpp" />
+    <ClCompile Include="ConvexObject3D.cpp" />
+    <ClCompile Include="ConvexShape3D.cpp" />
+    <ClCompile Include="CSGPolygon.cpp" />
+    <ClCompile Include="CSGPolygonPath.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
+    <ClCompile Include="CylinderModel.cpp" />
+    <ClCompile Include="CylinderShape.cpp" />
+    <ClCompile Include="DataContainer.cpp" />
+    <ClCompile Include="EagerPropertyLoader.cpp" />
+    <ClCompile Include="EdgeLinkDetection.cpp" />
+    <ClCompile Include="EdgeLinkResult.cpp" />
+    <ClCompile Include="EPAAlgorithm.cpp" />
+    <ClCompile Include="EPAResult.cpp" />
+    <ClCompile Include="EPATriangleData.cpp" />
+    <ClCompile Include="FileUtil.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="FpsCamera.cpp" />
+    <ClCompile Include="FreeCamera.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="FunnelAlgorithm.cpp" />
+    <ClCompile Include="GenericRendererBuilder.cpp" />
+    <ClCompile Include="GeometryContainer.cpp" />
+    <ClCompile Include="GeometryModel.cpp" />
+    <ClCompile Include="GhostBody.cpp" />
+    <ClCompile Include="GJKContinuousCollisionAlgorithm.cpp" />
+    <ClCompile Include="GJKConvexObjectWrapper.cpp" />
+    <ClCompile Include="GJKResult.cpp" />
+    <ClCompile Include="HeightfieldPointHelper.cpp" />
+    <ClCompile Include="ImpulseSolvingData.cpp" />
+    <ClCompile Include="IndexContainer.cpp" />
+    <ClCompile Include="IndexedTriangle2D.cpp" />
+    <ClCompile Include="IndexedTriangle3D.cpp" />
+    <ClCompile Include="InertiaCalculation.cpp" />
+    <ClCompile Include="IntegrateTransform.cpp" />
+    <ClCompile Include="IntegrateVelocity.cpp" />
+    <ClCompile Include="IslandContainer.cpp" />
+    <ClCompile Include="IslandElement.cpp" />
+    <ClCompile Include="IslandElementLink.cpp" />
+    <ClCompile Include="Line2D.cpp" />
+    <ClCompile Include="Line3D.cpp" />
+    <ClCompile Include="LineSegment2D.cpp" />
+    <ClCompile Include="LineSegment3D.cpp" />
+    <ClCompile Include="LoaderAnim.cpp" />
+    <ClCompile Include="LoaderMaterial.cpp" />
+    <ClCompile Include="LoaderMesh.cpp" />
+    <ClCompile Include="LoaderTTF.cpp" />
+    <ClCompile Include="LockById.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManifoldContactPoint.cpp" />
+    <ClCompile Include="ManifoldResult.cpp" />
+    <ClCompile Include="MapSerializer.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MaterialBuilder.cpp" />
+    <ClCompile Include="MathFunction.cpp" />
+    <ClCompile Include="Matrix2.cpp" />
+    <ClCompile Include="Matrix3.cpp" />
+    <ClCompile Include="Matrix4.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Meshes.cpp" />
+    <ClCompile Include="MeshService.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelDisplayable.cpp" />
+    <ClCompile Include="ModelInstanceDisplayer.cpp" />
+    <ClCompile Include="NarrowPhase.cpp" />
+    <ClCompile Include="NavLink.cpp" />
+    <ClCompile Include="NavLinkConstraint.cpp" />
+    <ClCompile Include="NavMesh.cpp" />
+    <ClCompile Include="NavMeshAgent.cpp" />
+    <ClCompile Include="NavMeshGenerator.cpp" />
+    <ClCompile Include="NavModelCopy.cpp" />
+    <ClCompile Include="NavObject.cpp" />
+    <ClCompile Include="NavObjectAABBNodeData.cpp" />
+    <ClCompile Include="NavPolygon.cpp" />
+    <ClCompile Include="NavTerrainTopography.cpp" />
+    <ClCompile Include="NavTriangle.cpp" />
+    <ClCompile Include="OBBox.cpp" />
+    <ClCompile Include="OBBoxModel.cpp" />
+    <ClCompile Include="ObjectDeleter.cpp" />
+    <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="OverlappingPair.cpp" />
+    <ClCompile Include="PascalTriangle.cpp" />
+    <ClCompile Include="PathfindingAStar.cpp" />
+    <ClCompile Include="PathNode.cpp" />
+    <ClCompile Include="PathPoint.cpp" />
+    <ClCompile Include="PathPortal.cpp" />
+    <ClCompile Include="PathRequest.cpp" />
+    <ClCompile Include="PhysicsCharacter.cpp" />
+    <ClCompile Include="PhysicsTransform.cpp" />
+    <ClCompile Include="PhysicsWorld.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="PlaneSurfaceSplitService.cpp" />
+    <ClCompile Include="Point2.cpp" />
+    <ClCompile Include="Point3.cpp" />
+    <ClCompile Include="Point4.cpp" />
+    <ClCompile Include="PolygonsSubtraction.cpp" />
+    <ClCompile Include="PolygonsUnion.cpp" />
+    <ClCompile Include="Polytope.cpp" />
+    <ClCompile Include="PolytopeBuilder.cpp" />
+    <ClCompile Include="PolytopePlaneSurface.cpp" />
+    <ClCompile Include="PolytopeSurface.cpp" />
+    <ClCompile Include="PolytopeTerrainSurface.cpp" />
+    <ClCompile Include="Profiler.cpp" />
+    <ClCompile Include="ProfilerNode.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="RayTester.cpp" />
+    <ClCompile Include="RayTestResult.cpp" />
+    <ClCompile Include="Rectangle2D.cpp" />
+    <ClCompile Include="Rectangle3D.cpp" />
+    <ClCompile Include="RectangleShape.cpp" />
+    <ClCompile Include="ResizeConvexHull2DService.cpp" />
+    <ClCompile Include="ResizeConvexHull3DService.cpp" />
+    <ClCompile Include="ResizePolygon2DService.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceContainer.cpp" />
+    <ClCompile Include="RigidBody.cpp" />
+    <ClCompile Include="ScopeLockById.cpp" />
+    <ClCompile Include="ScopeProfiler.cpp" />
+    <ClCompile Include="Simplex.cpp" />
+    <ClCompile Include="SingletonContainer.cpp" />
+    <ClCompile Include="SleepUtil.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SphereBoxCollisionAlgorithm.cpp" />
+    <ClCompile Include="SphereModel.cpp" />
+    <ClCompile Include="SphereShape.cpp" />
+    <ClCompile Include="SphereSphereCollisionAlgorithm.cpp" />
+    <ClCompile Include="SplitBoundingBox.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringUtil.cpp" />
+    <ClCompile Include="SVGCircle.cpp" />
+    <ClCompile Include="SVGExporter.cpp" />
+    <ClCompile Include="SVGLine.cpp" />
+    <ClCompile Include="SVGPolygon.cpp" />
+    <ClCompile Include="SVGShape.cpp" />
+    <ClCompile Include="SyncVectorPairContainer.cpp" />
+    <ClCompile Include="TaggableResource.cpp" />
+    <ClCompile Include="TagHolder.cpp" />
+    <ClCompile Include="TemporalObject.cpp" />
+    <ClCompile Include="TerrainObstacleService.cpp" />
+    <ClCompile Include="TerrainSplitService.cpp" />
+    <ClCompile Include="TestApp.cpp" />
+    <ClCompile Include="Tetrahedron.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="Triangle3D.cpp" />
+    <ClCompile Include="TriangleShape3D.cpp" />
+    <ClCompile Include="TrianglesModel.cpp" />
+    <ClCompile Include="TriangulationAlgorithm.cpp" />
+    <ClCompile Include="TypeConverter.cpp" />
+    <ClCompile Include="UdaAttribute.cpp" />
+    <ClCompile Include="UdaChunk.cpp" />
+    <ClCompile Include="UdaParser.cpp" />
+    <ClCompile Include="UnicodeUtil.cpp" />
+    <ClCompile Include="UserAuthorityException.cpp" />
+    <ClCompile Include="UvScale.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector4.cpp" />
+    <ClCompile Include="VectorPairContainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AABBNode.h" />
+    <ClInclude Include="AABBNodeData.h" />
+    <ClInclude Include="AABBox.h" />
+    <ClInclude Include="AABBoxModel.h" />
+    <ClInclude Include="AABBTree.h" />
+    <ClInclude Include="AABBTreeAlgorithm.h" />
+    <ClInclude Include="AbstractBody.h" />
+    <ClInclude Include="AccumulatedSolvingData.h" />
+    <ClInclude Include="AICharacter.h" />
+    <ClInclude Include="AICharacterController.h" />
+    <ClInclude Include="AICharacterEventHandler.h" />
+    <ClInclude Include="AIEngine.h" />
+    <ClInclude Include="AIEntity.h" />
+    <ClInclude Include="AIEnvironment.h" />
+    <ClInclude Include="AIObject.h" />
+    <ClInclude Include="AIShape.h" />
+    <ClInclude Include="AITerrain.h" />
+    <ClInclude Include="AIWorld.h" />
+    <ClInclude Include="AngleConverter.h" />
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="BaseSceneShader.h" />
+    <ClInclude Include="Bezier.h" />
+    <ClInclude Include="BlendFunction.h" />
+    <ClInclude Include="BodyAABBNodeData.h" />
+    <ClInclude Include="BodyAABBTree.h" />
+    <ClInclude Include="BodyActiveStateUpdater.h" />
+    <ClInclude Include="BodyContainer.h" />
+    <ClInclude Include="BodyMomentum.h" />
+    <ClInclude Include="BoxShape.h" />
+    <ClInclude Include="BroadPhase.h" />
+    <ClInclude Include="BroadPhaseAlgorithm.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraSpaceService.h" />
+    <ClInclude Include="Capsule.h" />
+    <ClInclude Include="CapsuleModel.h" />
+    <ClInclude Include="CapsuleShape.h" />
+    <ClInclude Include="CharacterController.h" />
+    <ClInclude Include="CharacterControllerConfig.h" />
+    <ClInclude Include="CharacterEventCallback.h" />
+    <ClInclude Include="CircularFifo.h" />
+    <ClInclude Include="Clipper.h" />
+    <ClInclude Include="CollisionAlgorithm.h" />
+    <ClInclude Include="CollisionAlgorithmBuilder.h" />
+    <ClInclude Include="CollisionAlgorithmSelector.h" />
+    <ClInclude Include="CollisionBoxObject.h" />
+    <ClInclude Include="CollisionBoxShape.h" />
+    <ClInclude Include="CollisionCapsuleObject.h" />
+    <ClInclude Include="CollisionCapsuleShape.h" />
+    <ClInclude Include="CollisionCompoundShape.h" />
+    <ClInclude Include="CollisionConcaveShape.h" />
+    <ClInclude Include="CollisionConeObject.h" />
+    <ClInclude Include="CollisionConeShape.h" />
+    <ClInclude Include="CollisionConvexHullObject.h" />
+    <ClInclude Include="CollisionConvexHullShape.h" />
+    <ClInclude Include="CollisionConvexObject3D.h" />
+    <ClInclude Include="CollisionConvexObjectPool.h" />
+    <ClInclude Include="CollisionCylinderObject.h" />
+    <ClInclude Include="CollisionCylinderShape.h" />
+    <ClInclude Include="CollisionHeightfieldShape.h" />
+    <ClInclude Include="CollisionObjectWrapper.h" />
+    <ClInclude Include="CollisionShape3D.h" />
+    <ClInclude Include="CollisionSphereObject.h" />
+    <ClInclude Include="CollisionSphereShape.h" />
+    <ClInclude Include="CollisionTriangleObject.h" />
+    <ClInclude Include="CollisionTriangleShape.h" />
+    <ClInclude Include="CollisionVisualizer.h" />
+    <ClInclude Include="CollisionWorld.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="CommonSolvingData.h" />
+    <ClInclude Include="CompoundAnyCollisionAlgorithm.h" />
+    <ClInclude Include="ConcaveAnyCollisionAlgorithm.h" />
+    <ClInclude Include="Cone.h" />
+    <ClInclude Include="ConeModel.h" />
+    <ClInclude Include="ConeShape.h" />
+    <ClInclude Include="ConstAnimation.h" />
+    <ClInclude Include="ConstMesh.h" />
+    <ClInclude Include="ConstMeshes.h" />
+    <ClInclude Include="ConstraintSolver.h" />
+    <ClInclude Include="ConstraintSolvingData.h" />
+    <ClInclude Include="ContinuousCollisionResult.h" />
+    <ClInclude Include="ConvexConvexCollisionAlgorithm.h" />
+    <ClInclude Include="ConvexHull2D.h" />
+    <ClInclude Include="ConvexHull3D.h" />
+    <ClInclude Include="ConvexHullModel.h" />
+    <ClInclude Include="ConvexHullShape2D.h" />
+    <ClInclude Include="ConvexHullShape3D.h" />
+    <ClInclude Include="ConvexObject2D.h" />
+    <ClInclude Include="ConvexObject3D.h" />
+    <ClInclude Include="ConvexShape2D.h" />
+    <ClInclude Include="ConvexShape3D.h" />
+    <ClInclude Include="CSGPolygon.h" />
+    <ClInclude Include="CSGPolygonPath.h" />
+    <ClInclude Include="CustomModelShaderVariable.h" />
+    <ClInclude Include="Cylinder.h" />
+    <ClInclude Include="CylinderModel.h" />
+    <ClInclude Include="CylinderShape.h" />
+    <ClInclude Include="DataContainer.h" />
+    <ClInclude Include="DisplayMode.h" />
+    <ClInclude Include="EagerPropertyLoader.h" />
+    <ClInclude Include="Earcut.h" />
+    <ClInclude Include="EdgeLinkDetection.h" />
+    <ClInclude Include="EdgeLinkResult.h" />
+    <ClInclude Include="EPAAlgorithm.h" />
+    <ClInclude Include="EPAResult.h" />
+    <ClInclude Include="EPATriangleData.h" />
+    <ClInclude Include="FileUtil.h" />
+    <ClInclude Include="FixedSizePool.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="FpsCamera.h" />
+    <ClInclude Include="FreeCamera.h" />
+    <ClInclude Include="Frustum.h" />
+    <ClInclude Include="FunnelAlgorithm.h" />
+    <ClInclude Include="GenericRendererBuilder.h" />
+    <ClInclude Include="GeometryContainer.h" />
+    <ClInclude Include="GeometryModel.h" />
+    <ClInclude Include="GhostBody.h" />
+    <ClInclude Include="GJKAlgorithm.h" />
+    <ClInclude Include="GJKContinuousCollisionAlgorithm.h" />
+    <ClInclude Include="GJKConvexObjectWrapper.h" />
+    <ClInclude Include="GJKResult.h" />
+    <ClInclude Include="GridContainer.h" />
+    <ClInclude Include="HashUtil.h" />
+    <ClInclude Include="HeightfieldPointHelper.h" />
+    <ClInclude Include="ImpulseSolvingData.h" />
+    <ClInclude Include="IndexContainer.h" />
+    <ClInclude Include="IndexedTriangle2D.h" />
+    <ClInclude Include="IndexedTriangle3D.h" />
+    <ClInclude Include="InertiaCalculation.h" />
+    <ClInclude Include="IntegrateTransform.h" />
+    <ClInclude Include="IntegrateVelocity.h" />
+    <ClInclude Include="IslandContainer.h" />
+    <ClInclude Include="IslandElement.h" />
+    <ClInclude Include="IslandElementLink.h" />
+    <ClInclude Include="Line2D.h" />
+    <ClInclude Include="Line3D.h" />
+    <ClInclude Include="LineSegment2D.h" />
+    <ClInclude Include="LineSegment3D.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="LoaderAnim.h" />
+    <ClInclude Include="LoaderMaterial.h" />
+    <ClInclude Include="LoaderMesh.h" />
+    <ClInclude Include="LoaderTTF.h" />
+    <ClInclude Include="LockById.h" />
+    <ClInclude Include="LRUCache.h" />
+    <ClInclude Include="ManifoldContactPoint.h" />
+    <ClInclude Include="ManifoldResult.h" />
+    <ClInclude Include="MapSerializer.h" />
+    <ClInclude Include="MapUtil.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MaterialBuilder.h" />
+    <ClInclude Include="MathFunction.h" />
+    <ClInclude Include="MathValue.h" />
+    <ClInclude Include="Matrix2.h" />
+    <ClInclude Include="Matrix3.h" />
+    <ClInclude Include="Matrix4.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Meshes.h" />
+    <ClInclude Include="MeshFilter.h" />
+    <ClInclude Include="MeshScaleAxis.h" />
+    <ClInclude Include="MeshService.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelDisplayable.h" />
+    <ClInclude Include="ModelInstanceDisplayer.h" />
+    <ClInclude Include="NarrowPhase.h" />
+    <ClInclude Include="NavLink.h" />
+    <ClInclude Include="NavLinkConstraint.h" />
+    <ClInclude Include="NavMesh.h" />
+    <ClInclude Include="NavMeshAgent.h" />
+    <ClInclude Include="NavMeshGenerator.h" />
+    <ClInclude Include="NavModelCopy.h" />
+    <ClInclude Include="NavObject.h" />
+    <ClInclude Include="NavObjectAABBNodeData.h" />
+    <ClInclude Include="NavPolygon.h" />
+    <ClInclude Include="NavPolygonEdge.h" />
+    <ClInclude Include="NavTerrainTopography.h" />
+    <ClInclude Include="NavTopography.h" />
+    <ClInclude Include="NavTriangle.h" />
+    <ClInclude Include="OBBox.h" />
+    <ClInclude Include="OBBoxModel.h" />
+    <ClInclude Include="ObjectDeleter.h" />
+    <ClInclude Include="Observable.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="Octree.h" />
+    <ClInclude Include="Octreeable.h" />
+    <ClInclude Include="OctreeableHelper.h" />
+    <ClInclude Include="OctreeManager.h" />
+    <ClInclude Include="OverlappingPair.h" />
+    <ClInclude Include="PairContainer.h" />
+    <ClInclude Include="PascalTriangle.h" />
+    <ClInclude Include="PathfindingAStar.h" />
+    <ClInclude Include="PathNode.h" />
+    <ClInclude Include="PathPoint.h" />
+    <ClInclude Include="PathPortal.h" />
+    <ClInclude Include="PathRequest.h" />
+    <ClInclude Include="PhysicsCharacter.h" />
+    <ClInclude Include="PhysicsEngine.h" />
+    <ClInclude Include="PhysicsTransform.h" />
+    <ClInclude Include="PhysicsWorld.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlaneSurfaceSplitService.h" />
+    <ClInclude Include="Point2.h" />
+    <ClInclude Include="Point3.h" />
+    <ClInclude Include="Point4.h" />
+    <ClInclude Include="PolygonsSubtraction.h" />
+    <ClInclude Include="PolygonsUnion.h" />
+    <ClInclude Include="Polytope.h" />
+    <ClInclude Include="PolytopeBuilder.h" />
+    <ClInclude Include="PolytopePlaneSurface.h" />
+    <ClInclude Include="PolytopeSurface.h" />
+    <ClInclude Include="PolytopeTerrainSurface.h" />
+    <ClInclude Include="Processable.h" />
+    <ClInclude Include="Profiler.h" />
+    <ClInclude Include="ProfilerNode.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="RayTester.h" />
+    <ClInclude Include="RayTestResult.h" />
+    <ClInclude Include="Rectangle2D.h" />
+    <ClInclude Include="Rectangle3D.h" />
+    <ClInclude Include="RectangleShape.h" />
+    <ClInclude Include="ResizeConvexHull2DService.h" />
+    <ClInclude Include="ResizeConvexHull3DService.h" />
+    <ClInclude Include="ResizePolygon2DService.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceContainer.h" />
+    <ClInclude Include="RigidBody.h" />
+    <ClInclude Include="ScopeLockById.h" />
+    <ClInclude Include="ScopeProfiler.h" />
+    <ClInclude Include="Simplex.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SingletonContainer.h" />
+    <ClInclude Include="SingletonInterface.h" />
+    <ClInclude Include="SleepUtil.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SphereBoxCollisionAlgorithm.h" />
+    <ClInclude Include="SphereModel.h" />
+    <ClInclude Include="SphereShape.h" />
+    <ClInclude Include="SphereSphereCollisionAlgorithm.h" />
+    <ClInclude Include="SplitBoundingBox.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringUtil.h" />
+    <ClInclude Include="SVGCircle.h" />
+    <ClInclude Include="SVGExporter.h" />
+    <ClInclude Include="SVGLine.h" />
+    <ClInclude Include="SVGPolygon.h" />
+    <ClInclude Include="SVGShape.h" />
+    <ClInclude Include="SyncFixedSizePool.h" />
+    <ClInclude Include="SyncVectorPairContainer.h" />
+    <ClInclude Include="TaggableResource.h" />
+    <ClInclude Include="TagHolder.h" />
+    <ClInclude Include="TemporalObject.h" />
+    <ClInclude Include="TerrainObstacleService.h" />
+    <ClInclude Include="TerrainSplitService.h" />
+    <ClInclude Include="TestApp.h" />
+    <ClInclude Include="Tetrahedron.h" />
+    <ClInclude Include="ThreadSafeSingleton.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Triangle3D.h" />
+    <ClInclude Include="TriangleShape3D.h" />
+    <ClInclude Include="TrianglesModel.h" />
+    <ClInclude Include="TriangulationAlgorithm.h" />
+    <ClInclude Include="TypeConverter.h" />
+    <ClInclude Include="UdaAttribute.h" />
+    <ClInclude Include="UdaChunk.h" />
+    <ClInclude Include="UdaParser.h" />
+    <ClInclude Include="UnicodeUtil.h" />
+    <ClInclude Include="UserAuthorityException.h" />
+    <ClInclude Include="UvScale.h" />
+    <ClInclude Include="UvScaleType.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector4.h" />
+    <ClInclude Include="VectorPairContainer.h" />
+    <ClInclude Include="VectorUtil.h" />
+    <ClInclude Include="Vertex.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -12,3 +12,5 @@ Thumbs.db
 
 /bin/Debug/Game.*
 /bin/Release/Game.*
+/bin/Debug/Temp.*
+/bin/Release/Temp.*
