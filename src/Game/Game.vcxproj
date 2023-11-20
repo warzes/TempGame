@@ -95,6 +95,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="DepthStencilState.cpp" />
     <ClCompile Include="GeometryMap.cpp" />
     <ClCompile Include="MapEngine.cpp" />
     <ClCompile Include="GameApp01.cpp" />
@@ -103,13 +106,30 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Temp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
     <ClInclude Include="BaseSceneShader.h" />
+    <ClInclude Include="Box.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="CompareFunction.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="ConvexVolume.h" />
+    <ClInclude Include="DepthStencilState.h" />
     <ClInclude Include="GeometryMap.h" />
     <ClInclude Include="MapEngine.h" />
     <ClInclude Include="GameApp01.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Rect.h" />
+    <ClInclude Include="Scalar.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StencilOperation.h" />
+    <ClInclude Include="Vector.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
