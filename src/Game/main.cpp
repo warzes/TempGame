@@ -84,6 +84,6 @@ int main(
 	//createInfo.window.height = 960;
 	createInfo.window.vsyncEnabled = true;
 	auto engineDevice = EngineDevice::Create(createInfo);
-	engineDevice->RunApp(std::make_shared<GameApp01>());
+	engineDevice->RunApp(std::make_shared<GameApp>());
 }
 //-----------------------------------------------------------------------------

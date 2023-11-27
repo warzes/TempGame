@@ -89,7 +89,7 @@ namespace
 	GeometryBufferRef TestGeom;
 }
 //-----------------------------------------------------------------------------
-bool GameApp01::Create()
+bool GameApp::Create()
 {
 	//glEnable(GL_CULL_FACE); // для теста - треугольник выше против часой стрелки
 
@@ -271,14 +271,14 @@ bool GameApp01::Create()
 	return true;
 }
 //-----------------------------------------------------------------------------
-void GameApp01::Destroy()
+void GameApp::Destroy()
 {
 	TileShader.reset();
 	m_textures[0].reset();
 	m_textures[1].reset();
 }
 //-----------------------------------------------------------------------------
-void GameApp01::Render()
+void GameApp::Render()
 {
 	auto& renderSystem = GetRenderSystem();
 	auto& graphicsSystem = GetGraphicsSystem();
@@ -348,7 +348,7 @@ void GameApp01::Render()
 	//renderSystem.Draw(TestGeom);
 }
 //-----------------------------------------------------------------------------
-void GameApp01::Update(float deltaTime)
+void GameApp::Update(float deltaTime)
 {
 	if (GetInputSystem().IsKeyDown(Input::KEY_ESCAPE))
 	{
