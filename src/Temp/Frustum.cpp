@@ -106,7 +106,7 @@ template<class T> void nFrustum<T>::buildData() {
 	Point3<T> p3((frustumPoints[NTR] + frustumPoints[NBR]) / (T)2.0);
 	nPlane<T> middlePlane(p1, p2, p3);
 	bool hasIntersection = false;
-	position = middlePlane.intersectPoint(sideLine, hasIntersection);
+	eyePosition = middlePlane.intersectPoint(sideLine, hasIntersection);
 }
 
 template<class T> const std::array<Point3<T>, 8>& nFrustum<T>::getFrustumPoints() const {
@@ -117,8 +117,14 @@ template<class T> const Point3<T>& nFrustum<T>::getFrustumPoint(FrustumPoint fru
 	return frustumPoints[frustumPoint];
 }
 
-template<class T> const Point3<T>& nFrustum<T>::getPosition() const {
-	return position;
+template<class T> const Point3<T>& nFrustum<T>::getEyePosition() const {
+	return eyePosition;
+}
+
+template<class T> Point3<T> nFrustum<T>::computeCenterPosition() const {
+	Point3<T> nearCenter((frustumPoints[NTL] + frustumPoints[NBR]) / (T)2.0);
+	Point3<T> farCenter((frustumPoints[FTL] + frustumPoints[FBR]) / (T)2.0);
+	return (nearCenter + farCenter) / (T)2.0;
 }
 
 template<class T> Point3<T> nFrustum<T>::getSupportPoint(const Vector3<T>& direction) const {
@@ -138,12 +144,12 @@ template<class T> Point3<T> nFrustum<T>::getSupportPoint(const Vector3<T>& direc
 
 template<class T> T nFrustum<T>::computeNearDistance() const {
 	Point3<T> nearCenter((frustumPoints[NTL] + frustumPoints[NBR]) / (T)2.0);
-	return position.distance(nearCenter);
+	return eyePosition.distance(nearCenter);
 }
 
 template<class T> T nFrustum<T>::computeFarDistance() const {
 	Point3<T> farCenter((frustumPoints[FTL] + frustumPoints[FBR]) / (T)2.0);
-	return position.distance(farCenter);
+	return eyePosition.distance(farCenter);
 }
 
 /**
@@ -153,7 +159,7 @@ template<class T> T nFrustum<T>::computeFarDistance() const {
 */
 template<class T> nFrustum<T> nFrustum<T>::splitFrustum(T splitPositionStart, T splitPositionEnd) const {
 	Point3<T> nearCenter((frustumPoints[NTL] + frustumPoints[NBR]) / (T)2.0);
-	Vector3<T> positionToCenter = position.vector(nearCenter).normalize();
+	Vector3<T> positionToCenter = eyePosition.vector(nearCenter).normalize();
 
 	//top left points
 	Vector3<T> sideVector = frustumPoints[NTL].vector(frustumPoints[FTL]).normalize();
@@ -182,7 +188,7 @@ template<class T> nFrustum<T> nFrustum<T>::splitFrustum(T splitPositionStart, T 
 
 template<class T> nFrustum<T> nFrustum<T>::cutFrustum(T newFar) const {
 	Point3<T> nearCenter((frustumPoints[NTL] + frustumPoints[NBR]) / (T)2.0);
-	Vector3<T> positionToCenter = position.vector(nearCenter).normalize();
+	Vector3<T> positionToCenter = eyePosition.vector(nearCenter).normalize();
 
 	//top left point
 	Vector3<T> sideVector = frustumPoints[NTL].vector(frustumPoints[FTL]).normalize();

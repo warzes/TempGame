@@ -30,7 +30,8 @@ public:
 
 	const std::array<Point3<T>, 8>& getFrustumPoints() const;
 	const Point3<T>& getFrustumPoint(FrustumPoint frustumPoint) const;
-	const Point3<T>& getPosition() const;
+	const Point3<T>& getEyePosition() const;
+	Point3<T> computeCenterPosition() const;
 
 	Point3<T> getSupportPoint(const Vector3<T>&) const override;
 	T computeNearDistance() const;
@@ -47,7 +48,7 @@ private:
 	void buildData();
 
 	std::array<Point3<T>, 8> frustumPoints;
-	Point3<T> position; //eye/camera position
+	Point3<T> eyePosition;
 	std::array<nPlane<T>, 6> planes;
 	enum {
 		TOP = 0,
